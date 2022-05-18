@@ -1,0 +1,266 @@
+@import url(global.css);
+
+html {
+background: #004E98 url(../images/xpdefault/background.jpg) no-repeat 0 100%;
+background-size: cover;
+min-height: 100%;
+}
+
+#taskbar {
+height: 34px;
+background: #2257D6 url(../images/xpdefault/taskbar.png) repeat-x 0 0;
+}
+#startbutton span {
+width: 102px;
+height: 34px;
+background: transparent url(../images/xpdefault/start_button.png) no-repeat 0 0;
+}
+/*
+#startbutton:hover span {
+background-position: 0 -34px;
+}
+#startbutton:focus span, #startbutton:active span {
+background-position: 0 -68px;
+}
+*/
+#clock {
+background: #0F8AE7 url(../images/xpdefault/clock.png) repeat-x 0 0;
+}
+
+
+
+#startbutton span.starthovered {
+background-position: 0 -34px;
+}
+#startbutton span.startclicked {
+background-position: 0 -69px;
+}
+
+
+
+/* start menu */
+#start {
+width: 100px;
+height: 34px;
+}
+#startmenu {
+top: -474px;
+background: transparent url(../images/xpdefault/start_menu.png) no-repeat 0 0;
+width: 384px;
+height: 479px;
+}
+#startmenu h3 {
+margin: 10px 9px;
+padding: 10px 0 0 0;
+height: 40px;
+}
+#startmenu #close {
+bottom: 5px;
+right: 10px;
+}
+#startmenu #close li a {
+padding: 10px 10px 10px 32px;
+background-position: 0 2px;
+background-color: transparent;
+background-repeat: no-repeat;
+}
+#startmenu li#logoff a {
+background-image: url(../images/xpdefault/logoff.png);
+}
+#startmenu li#shutdown a {
+background-image: url(../images/xpdefault/shutdown.png);
+}
+#startmenu li#logoff a:hover, #startmenu li#shutdown a:hover {
+background-position: 0 -31px;
+background-color: #1062CF;
+}
+
+
+
+#systemtray {
+background: transparent url(../images/xpdefault/system_tray_arrow.png) no-repeat 2px 0;
+}
+#systemtray li a, #quicklaunch li a, #openprograms li a {
+height: 34px;
+}
+#systemtray li#gmail a span {
+background-image: url(../images/xpdefault/system_tray_gmail.png);
+}
+#systemtray li#lan a span {
+background-image: url(../images/xpdefault/system_tray_lan.png);
+}
+#systemtray li#winamp a span {
+background-image: url(../images/xpdefault/system_tray_winamp.png);
+}
+#systemtray li#msn a span {
+background-image: url(../images/xpdefault/system_tray_msn.png);
+}
+
+
+
+
+#quicklaunch, #openprograms {
+left: 110px;
+background: transparent url(../images/xpdefault/taskbar_resize.png) no-repeat 0 0;
+}
+#quicklaunch li#quick_desktop a span {
+background-image: url(../images/xpdefault/quick_launch_destkop.png);
+}
+#quicklaunch li#quick_firefox a span {
+background-image: url(../images/xpdefault/quick_launch_firefox.png);
+}
+#quicklaunch li#quick_winamp a span {
+background-image: url(../images/xpdefault/quick_launch_winamp.png);
+}
+#quicklaunch li#quick_flashfxp a span {
+background-image: url(../images/xpdefault/quick_launch_flashfxp.png);
+}
+#quicklaunch li#quick_desktop a:hover span, #quicklaunch li#quick_firefox a:hover span,
+#quicklaunch li#quick_winamp a:hover span, #quicklaunch li#quick_flashfxp a:hover span {
+background-position: 0 -34px;
+}
+
+
+#openprograms {
+left: 225px;
+}
+#openprograms li {
+background: #397DF3 url(../images/xpdefault/open_button.png) no-repeat 0 0;
+}
+#openprograms li:hover {
+background: #55A0FF url(../images/xpdefault/open_button.png) no-repeat 0 -34px;
+}
+#openprograms li a {
+width: 105px;
+padding: 13px 0 0 29px;
+background-position: 5px 10px;
+}
+
+
+
+
+
+#recentprograms {
+width: 175px;
+padding: 10px 8px;
+}
+#recentprograms dl dd a {
+color: #7E7E7E;
+}
+#recent {
+background: transparent url(../images/xpdefault/divider.png) no-repeat 50% 0;
+}
+#internetbrowser:hover, #emailclient:hover, #recent li a:hover, #myplaces li a:hover,
+#myplaces li#myrecent ul li a:hover, #allprograms li a:hover, #startmenu #allprograms li ul li.folder a:hover,
+#startmenu #allprograms li ul li#winupdate a:hover, #allprograms li a:hover, #allprograms li a.stuff, #myplaces li#myrecent a.stuff {
+background-color: #316AC5;
+}
+
+
+#myplaces {
+top: 70px;
+right: 8px;
+width: 185px;
+}
+#myplaces li a {
+color: #0A246A;
+}
+#myplaces ul {
+background: transparent url(../images/xpdefault/divider2.png) no-repeat 50% 0;
+}
+#my li#myrecent {
+background: transparent url(../images/xpdefault/recent_arrows.png) no-repeat 100% -29px;
+}
+#myrecent ul, #allprograms ul {
+background: #fff url(../images/xpdefault/my_recent_side.png) repeat-y 0 0;
+border: 1px solid #55A1FF;
+}
+#myrecent ul {
+left: 180px;
+}
+
+
+
+
+#allprograms {
+margin-top: -5px;
+}
+#allprograms ul {
+left: 150px;
+}
+#allprograms li a {
+background: transparent url(../images/xpdefault/programs_arrow.png) no-repeat 80% 50%;
+}
+#allprograms li a:hover {
+background-position: 80% 50%;
+}
+#winupdate {
+background: transparent url(../images/xpdefault/divider.png) no-repeat 50% 100%;
+}
+
+
+
+
+
+
+
+
+
+#run_dialog div {
+background-color: #ece9d8;
+border: 3px solid #0732d9;
+}
+#run_dialog h2 {
+height: 30px;
+line-height: 300%;
+background: transparent url(../images/xpdefault/window_bar.png) repeat-x 0 0;
+}
+#run_dialog h2 span {
+height: 30px;
+display: block;
+background: transparent url(../images/xpdefault/window_corners.png) no-repeat 0 0;
+width: 15px;
+float: left;
+}
+#run_dialog ul.buttons {
+float: right;
+margin-top: 30px;
+}
+#run_dialog ul.buttons li {
+float: left;
+}
+
+
+
+ul.window_control {
+right: 1px;
+}
+ul.window_control li a {
+width: 28px;
+height: 30px;
+}
+ul.window_control li a span {
+width: 100%;
+height: 100%;
+background: transparent url(../images/xpdefault/window_buttons.png) no-repeat 0 0;
+}
+ul.window_control li.max a, ul.window_control li.max a span {
+width: 25px;
+}
+ul.window_control li.max a span {
+background-position: -28px 0;
+}
+ul.window_control li.close a span {
+background-position: -52px 0;
+}
+ul.window_control li.min a:hover span, ul.window_control li.min a:focus span {
+background-position: 0 -30px;
+}
+ul.window_control li.max a:hover span, ul.window_control li.max a:focus span {
+background-position: -28px -60px;
+}
+ul.window_control li.close a:hover span, ul.window_control li.close a:focus span {
+background-position: -52px -90px;
+}
+
+

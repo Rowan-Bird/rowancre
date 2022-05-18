@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Rowan Bird"/>
+    <meta name="description" content="Sample app that shows all NeonUI controls."/>
+    <title>Birdonline V2</title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <link rel="stylesheet" href="NeonUI/NeonUI.css"/>
+    <link rel="stylesheet" href="Styles.css"/>
+    <link rel="icon" type="image/x-icon" href="favicon.png">
+</head>
+  <body class="LightMode flexRow">
+
+    <nav class="NavViewExpanded">
+        <ul>
+            <button class="iconRegular iconButton" onclick="toggleClass('nav', 'NavViewExpanded', 'NavViewCollapsed')"></button>
+            <li class="NavViewItem NavViewItemSelected">
+                <img src="NeonUI/src/Home.svg">
+                Home
+            </li>
+            <li class="NavViewItem" onclick="location.href = 'easteregg.html';">
+                <img src="NeonUI/src/favicon.png">
+                :)
+            </li>
+            <li class="NavViewItem" onclick="location.href = '2.html';">
+                <img src="NeonUI/src/favicon.png">
+                Projects
+            </li>
+        </ul>
+    </nav>
+    
+    <main>
+        <center>
+        <br>
+        <h style="font-size: 80px;">Hi!</h>
+        <br>
+        <h style="font-size: 30px;">Welcome to my website!</h>
+        <br>
+        <br>
+        </center>
+        <br>
+        <div style="width: 270px; margin-left: 50px;" class="Card">
+            <p>Last updated: 16th of May, 2022</p>
+        </div>
+        
+        
+    </main>
+  </body>
+  <script src="NeonUI/NeonUI.js"></script>
+  <script src="gallery.js"></script>
+</html>

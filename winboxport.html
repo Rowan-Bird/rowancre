@@ -1,0 +1,426 @@
+
+<!DOCTYPE html>
+<link rel="stylesheet" type="text/css" href="file-explorer/file-explorer.css">
+<script type="text/javascript" src="file-explorer/file-explorer.js"></script> 
+<script src='https://cdn.jsdelivr.net/gh/nathancarter/jsfs@1/release/jsfs.min.js'></script>
+
+<head onload="var el = document.querySelect('div'); el.style.display = 'none';">
+    <script>
+         window.onload = function() {
+        document.getElementById('drag1').style.display='none';
+        document.getElementById('drag2').style.display='none';
+        document.getElementById('drag3').style.display='none';
+        document.getElementById('drag4').style.display='none';
+    }
+         
+     </script>
+          <script>
+          
+    
+
+      </script>
+     
+     
+     	<link rel="stylesheet" href="CSS/superfish.css" media="screen">
+<script src="jquery-3.6.0.min.js"></script>
+       <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+     <link rel stylesheet="style.css">
+    
+    <html>
+<head>
+    <script src="winbox.bundle.js"></script>
+</head>
+<body></body>
+</html>
+    
+</head>
+<script>
+ window.onload() { 
+    
+ }
+</script>
+
+
+
+<html lang="en">
+    
+    <style>
+        
+        html {
+            margin: 0px;
+            background-color: #3A6EA5;
+            background-image: url(img/Red%20moon%20desert.jpg);
+        }
+        
+        .body {
+        }
+
+html, body {margin: 0; height: 100%; overflow: hidden}
+ 
+        .taskbar {
+            background-image: url(img/taskbar.png)
+        }
+        
+        .iframe {
+    volume: silent;
+}
+
+        
+        .window {
+            
+        position: absolute;
+        margin: auto;
+        }
+        
+        .tray{
+            background-image: url(corner.png);
+            position: absolute;
+            bottom: 4px;
+            right: 0px;
+            z-index: 100;
+            height: 28px;
+            width: 150px;
+        }
+        
+        .CMDicon {
+            text-align: center;
+            width: 100px;
+            position: absolute;
+            color: white;
+            text-shadow: 1px 1px black;
+        }
+                .punballicon {
+                    top: 110px;
+            text-align: center;
+            width: 100px;
+            position: absolute;
+            color: white;
+            text-shadow: 1px 1px black;
+        }
+        .webampicon {
+            top: 170px;
+            text-align: center;
+            width: 100px;
+            position: absolute;
+            color: white;
+            text-shadow: 1px 1px black;
+        }
+        
+        .recycleicon {
+            bottom: 60px;
+            right: 0px;
+            text-align: center;
+            width: 100px;
+            position: absolute;
+            color: white;
+            text-shadow: 1px 1px black;
+        }
+
+        .loader-wrapper {
+            width: 100%;
+            height: 100%;
+            position: static;
+            top: 0;
+            left: 0;
+            display: flex;
+            z-index: 10;
+            background-color: black;
+        }
+        
+        @import url('https://fonts.googleapis.com/css?family=Roboto:100,300,700');
+body{ 
+  font-family: 'Roboto', sans-serif; 
+  color: #fff;
+}
+.no {
+  position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+ 
+}
+.container{
+  width: 150px;
+  height: 10px;
+  border: 2px solid #b2b2b2;
+  border-radius: 7px;
+  margin: 0 auto;
+  padding: 2px 1px;
+  overflow: hidden;
+  font-size: 0;
+}
+.box{
+  width: 9px;
+  height: 100%;
+  background: linear-gradient(to bottom, #2838c7 0%,#5979ef 17%,#869ef3 32%,#869ef3 45%,#5979ef 59%,#2838c7 100%);
+  display: inline-block;
+  margin-right: 2px;
+  animation: loader 2s infinite;
+  animation-timing-function: linear;
+}
+.logo{
+  width: 270px;
+  margin: 50px auto;
+    color: white;
+}
+.logo p{
+  margin: 0;
+  padding: 0;  
+}
+.top{
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 16px;
+}
+.top:after{
+  content:"\00a9";
+  font-size: 10px;
+  position: relative;
+  top: -5px;
+  margin-left: 2px;
+}
+.mid{
+  font-size: 46px;
+  font-weight: 700;
+  line-height: 36px;  
+}
+.mid span{
+  font-size: 22px;
+  display: inline-block;
+  vertical-align: top;
+  color: #FF6821;
+  margin-top: -8px;
+}
+.logo .bottom{
+  font-size: 30px;
+  font-weight: 300;
+  line-height: 30px;
+  margin-left: 5px;
+  
+}
+@keyframes loader{
+  0%{
+    transform: translate(-30px);
+  }
+  100%{
+    transform: translate(150px);
+  }
+}
+
+    </style>
+<head>
+    
+    <div class="loader-wrapper">
+        <div class="no">
+  <div class="logo">
+    <img src="https://techgage.com/wp-content/uploads/2014/04/Microsoft-Windows-XP-Flag-Logo.png" width="140px" style="margin-left: 60px;">
+    <p class="top">Microshaft</p>
+    <p class="mid">Windows<span>2004</span></p>
+    <p class="bottom">Home x64</p>
+  </div>
+  <div class="container">
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+  </div>
+</div>
+    </div>    
+    
+    <title>My projects</title>
+    <link rel="icon" type="image/x-icon" href="NeonUI/src/error.png">
+    <link rel="icon" type="image/x-icon" href="favicon.png">
+    <link
+  rel="stylesheet"
+  href="https://unpkg.com/7.css">
+</head>
+  <body class="LightMode flexRow">
+
+    <nav class="NavViewExpanded">
+        <ul>
+            <button class="NavViewItem" onclick="location.href = 'index.html';">
+                <img src="NeonUI/src/Home.svg" width="16px;">
+                Home
+            </button>
+            <button class="NavViewItem" onclick="location.href = 'easteregg.html';">
+                <img src="NeonUI/src/favicon.png" width="16px;">
+                :)
+            </button>
+            <button class="NavViewItem" onclick="location.href = 'https://youtube.com/rowancre';">
+                <img src="NeonUI/src/error.png" width="16px;">
+                My Youtube Channel
+            </button>
+            <button class="NavViewItem" onclick="location.href = 'https://youtube.com/rowancre';">
+                <img src="NeonUI/src/man.png" width="16px;">
+                About me
+            </button>
+            <button class="focused" onclick="location.href = 'projects.html';">
+                <img src="NeonUI/src/coding.ico" width="16px;">
+                Windows 2004
+            </button>
+        </ul>
+    </nav>
+    
+        <div class="tray" style=""></div>
+<div class="CMDicon">
+      <img onclick="createiframe(); document.getElementById('drag2').style.display='block';" onclick="" src="pinball/Icon/0409/4.ico" width="32px">
+      <p style="position: absolute; top: 20px; left: 30px">Pinball</p>
+</div>
+
+<div class="punballicon">
+      <img onclick="document.getElementById('drag1').style.display='block';" src="img/console.png">
+      <p style="position: absolute; top: 20px; left: 15px">JS Console</p>
+</div>
+      
+<div class="webampicon">
+      <img onclick="document.getElementById('drag3').style.display='block';" src="img/XP/3.ico">
+      <p style="position: absolute; top: 22px; left: 30px">Winver</p>
+</div>
+      
+<div class="recycleicon">
+      <img onclick="WinBox.new('Hello world')" src="XP/Icon/0409/915.ico" width="32px">
+      <p style="position: absolute; top: 22px; left: 17px">Recycle Bin</p>
+</div>
+      
+    <div draggable=true class="main" style="">
+        <div style="width: 270px; margin-left: 50px;" class="Card">
+        </div>
+
+
+        
+        <div id="drag" id="error1" class="window" style="width: 400px; height: 120px; margin: 10%;">
+  <div id="handle" class="title-bar">
+    <div class="title-bar-text">Fatal Error</div>
+    <div class="title-bar-controls">
+      <button onclick="document.getElementById('drag').style.display='none';" aria-label="Close"></button>
+    </div>
+  </div>
+  <div class="window-body">
+      <img src="img/explorer_111.ico" style="margin: 10px;" width="32px">
+      <p style="display: inline-block; top: 45px; position: absolute;">Fatal Error: Cannot find C:\Windows2004\Web</p>
+      <center>
+      <button onclick="document.getElementById('drag').style.display='none';" style="bottom: 10px; position: absolute;">Ok</button>
+      </center>
+      <audio id="audio" src="Media/Windows%20XP%20Critical%20Stop.wav" autoplay></audio>
+ </div>
+</div>
+</div>
+
+        
+<div style="width: 800px; height: 400px; margin: auto; margin-top: 5%;" id="drag1" id="cmd" style="display: none;" class="window">
+  <div id="handle" class="title-bar">
+    <div class="title-bar-text">Command Prompt</div>
+    <div class="title-bar-controls">
+      <button aria-label="Minimize"></button>
+      <button aria-label="Maximize"></button>
+      <button onclick="document.getElementById('drag1').style.display='none';" aria-label="Close"></button>
+    </div>
+  </div>
+  <div style="padding-left: 3px;" class="window-body">
+    <iframe src="https://jsconsole.com/" frameBorder="0" style="height: 348px; position: absolute; width: 778px; border: 0px;">
+        
+        
+    </iframe>
+  </div>
+</div>
+        
+        <div class="taskbar" style="bottom: 0px; position: absolute; width: 100%;">
+            <img src="img/standard.png" onmouseover="this.src='img/hover.png'" onmouseout="this.src='img/standard.png'" onclick="this.src='img/pressed.png'">
+        </div>
+    </div>
+      
+      <div style="width: 597px; height: 454px; margin: auto; margin-top: 5%; overflow: hidden;" id="drag2" id="punball" style="display: none;" class="window">
+  <div id="handle" class="title-bar">
+    <div class="title-bar-text">3D Pinball for Windows - Space Cadet</div>
+    <div class="title-bar-controls">
+      <button aria-label="Minimize"></button>
+      <button aria-label="Maximize"></button>
+      <button class="pinballclose" onclick="kill(); document.getElementById('drag2').style.display='none';" onclick="document.getElementById("pinball").remove()" aria-label="Close"></button>
+    </div>
+  </div>
+  <div style="padding-left: 3px; margin: 0px; overflow: hidden; margin-left: : 3px;" class="window-body" id="pinballframe">
+      
+  </div>
+    </div>  
+     
+        
+        
+            <div style="width: 419px; height: 325px; margin: auto; margin-top: 5%;" id="drag3" id="winver" style="display: none;" class="window">
+  <div id="handle" class="title-bar">
+    <div class="title-bar-text">About Windows</div>
+    <div class="title-bar-controls">
+      <button aria-label="Minimize"></button>
+      <button aria-label="Maximize"></button>
+      <button class="punballX" onclick="document.getElementById('drag3').style.display='none';" aria-label="Close"></button>
+    </div>
+  </div>
+  <div class="window-body" style="margin: 0px;">
+      <center>
+        <img src="img/banner.png" style="display: block">
+          <img src="img/Bitmap138.bmp" style="display: block">
+      </center>
+          <p style="margin-left: 50px; margin-right: 50px;">Microshaft ® Windows <br> Version 5.2 (Build 2700.xpsp1.030417-2004 : Service Pack 1) <br> Copyright ® 2000-2004 RowanCrE  <br><br><br> This product is licensed under the terms of the <a href="">End-user License Agreement</a> to: <br><br> Rowan <br> RowanCrE</p>
+          <div style="margin-left: 50px; margin-right: 15px; background-color: darkgray; height: 1px; box-shadow: 1px 1px white;"></div>
+      <p style="margin-left: 50px; margin-right: 50px;">Physical memory available to Windows:  65,535</p>
+      <button class="focused" onclick="document.getElementById('drag3').style.display='none';" style="position: absolute; right: 10px;">Ok</button>
+  </div>
+</div>
+      
+        <div id="drag4" id="error2" class="window" style="width: 600px; height: 120px; margin: 10%;">
+  <div id="handle" class="title-bar">
+    <div class="title-bar-text">Error</div>
+    <div class="title-bar-controls">
+      <button onclick="document.getElementById('drag4').style.display='none';" aria-label="Close"></button>
+    </div>
+  </div>
+  <div class="window-body">
+      <img src="img/explorer_111.ico" style="margin: 10px;" width="32px">
+      <p style="display: inline-block; top: 45px; position: absolute;">Cannot find "Recycle Bin". Please either obtain this file or locate it and move it back to it's normal location</p>
+      <center>
+      <button onclick="document.getElementById('drag4').style.display='none';" style="bottom: 10px; position: absolute;">Ok</button>
+      </center>     
+</div>
+</div>
+        
+        
+        <div class="taskbar" style="bottom: 0px; position: absolute; width: 100%;">
+            <img src="img/standard.png" onmouseover="this.src='img/hover.png'" onmouseout="this.src='img/standard.png'" onclick="this.src='img/pressed.png'">
+        </div>
+
+
+      
+      <html>    
+  <script src="NeonUI/NeonUI.js"></script>
+  <script src="gallery.js"></script>
+</html>
+
+      <!This is where all the dragging is done-->
+
+      <!All of the frame action goes here-->     
+<script>
+    function createiframe() {
+    var iframe = document.createElement('iframe');
+        iframe.setAttribute("src", "https://rowan-bird.github.io/balls/");
+        iframe.setAttribute("id", "pinball");
+        iframe.setAttribute("frameborder", "0")
+        iframe.setAttribute("scrolling", "no")
+        iframe.setAttribute("height", "460")
+        iframe.setAttribute("width", "600")
+        iframe.setAttribute("style", "margin-left: -9px; margin-top: 0px;")
+        
+    document.getElementById("pinballframe").appendChild(iframe);
+    window.scrollBy(0, 100000);
+    }
+    
+function kill() {
+    document.getElementById("pinball").remove();
+}
+
+    $(window).on("load",function(){
+          $(".loader-wrapper").fadeOut("slow");
+        });
+    
+</script>
+
