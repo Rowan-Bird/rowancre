@@ -1,0 +1,30 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html  { height: 100%; background: #fff; }
+body { height: 100%; overflow: hidden; border: 0; margin: 0; padding: 0; font-family: "helvetica neue", arial, helvetica; width: 100%; overflow-x: hidden; font-size: 90%;line-height: 20px;}
+
+.main { width: 100% ;}
+.leftpane { width: 72%; float: left;border-right:3px solid appworkspace;}
+.rightpane{ width: 27%; float: left;background-color: powderblue;}
+ul { list-style : none;}
+form ul li {  white-space: pre-wrap; }
+.last { border-bottom: 1px solid peachpuff;padding-bottom: 5px;}
+form { font: 15px arial}
+#command { height:auto;line-height:28px;min-height: 30px ; border: 1px solid burlywood;display: inline-block;width: 100%;cursor: text;}
+#commandtxt {cursor: text;}
+#command .autopop { color: #999999;}
+#PropWrapper {position: absolute;border: 1px solid #999999;border-radius: 4px;background-color: #fff;}
+#console { width: 100%;overflow-y:auto }
+#output li span.info { color : green;font-weight: bold}
+#output li { color: blue}
+ol { padding-left: 8%;}
+.help{ padding-left:5%;}
+span { outline: none;}
+.help ul {list-style: disc outside none;margin-bottom: 10px;padding-left: 6%; }
+.help h2 {font: bold 19px arial;padding: 10px 0;}
+.help li { font-size: 90%;}
+code{margin: 0 2px;padding: 0px 5px;border: 1px solid #ddd;background-color: #f8f8f8;border-radius: 3px;}
+

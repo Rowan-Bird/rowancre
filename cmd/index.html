@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>JavaScript console - Execute Javascript commands/code</title>
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1" />
+<link rel="stylesheet" href="style.css"></link>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="jquery.min.js"><\/script>')</script>
+</head>
+<body>
+<div class="main">
+<div class="leftpane">
+<form id="form" name="form">
+  <div spellcheck="false" autocapitalize="off" id="command" autofocus=""><span contenteditable="" autocorrect="off" autocapitalize="off" spellcheck="false" id="commandtxt"></span></div>
+  <div id="PropWrapper">
+    <ul id="PropList"></ul>
+  </div>
+</form>
+<div id="console">
+  <ul id="output"></ul>
+</div>
+</div>
+<div class="rightpane">
+  <div class="help">
+    <h2>Usage Guidelines refer</h2>
+    <h4>How to use</h4>
+    <ul>
+        <li>Type Command to execute in the box showing top left panel</li>
+        <li>Traverse Autopopulate list with <code>UP</code> & <code>DOWN</code> arrow keys</li>
+        <li>Press <code>RIGHT ARROW</code> or <code>END</code> key to update with autopopulate text</li>
+        <li>Press <code>ENTER + SHIFT </code>key to enter multiline code</li>
+        <li>press <code>ENTER</code> to execute the command / code </li>
+        <li><code>:history</code> - command to pull history</li>
+        <li><code>:clear</code> - command to clear history</li>
+    </ul>
+  <h4>TODO in ma plate</h4>
+   <ol>
+      <li>Prettify the output</li>
+      <li>Autopopulate for multiline code</li>
+      <li>Update code with TODO comments</li>
+    </ol>
+  </div>
+
+</div>
+</div>
+</div>
+
+<iframe id="helperframe" style="display:none;">
+<html>
+<head></head>
+<body><div>text text</div></body>
+</html>
+</iframe>
+<script src="jsrunner.js"></script>
+</body>
+</html>

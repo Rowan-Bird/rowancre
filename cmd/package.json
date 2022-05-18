@@ -1,0 +1,30 @@
+{
+  "name": "JSDebugger",
+  "description": "JSDebugger",
+  "version": "0.1.0",
+  "homepage": "http://jsdebugger",
+  "licenses": [
+    {
+      "type": "Copyright",
+      "url": ""
+    }
+  ],
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-compass": "~0.4.0",
+    "grunt-contrib-watch": "~0.5.0",
+    "grunt-contrib-jshint": "~0.6.0",
+    "grunt-contrib-concat": "~0.3.0",
+    "grunt-contrib-clean": "~0.5.0",
+    "grunt-contrib-csslint": "~0.1.2",
+    "grunt-contrib-imagemin": "~0.1.4",
+    "grunt-contrib-copy": "~0.4.1",
+    "grunt-contrib-connect": "~0.3.0",
+    "grunt-connect-proxy": "~0.1.5",
+    "grunt-contrib-uglify": "~0.2.2",
+    "grunt-banner": "~0.1.4",
+    "grunt-open": "~0.2.1",
+    "grunt-includes": "~0.3.4",
+    "connect-livereload": "~0.2.0"
+  }
+}
