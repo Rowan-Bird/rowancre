@@ -231,7 +231,7 @@ body{
 }
         
         
-        .wb-title {
+        .winbox {
             padding: 0px;
             margin: 0px;
     font-family: "Trebuchet MS";
@@ -245,17 +245,54 @@ body{
         rgba(0, 91, 255, 1) 95%,
         rgba(0, 61, 215, 1) 96%,
         rgba(0, 61, 215, 1) 100%
+        rgba(0, 61, 215, 1) 100%
     );
-    padding: 3px 5px 3px 3px;
     border-top: 1px solid #0831d9;
     border-left: 1px solid #0831d9;
     border-right: 1px solid #001ea0;
     border-top-left-radius: 8px;
     border-top-right-radius: 7px;
-    font-size: 13px;
-    text-shadow: 1px 1px #0f1089;
+    font-size: 11px;
     height: 21px;
+    box-shadow: inset -1px -1px #00138c, inset 1px 1px #0831d9, inset -2px -2px #001ea0, inset 2px 2px #166aee;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    padding: 0 0 3px 0;
 }
+
+        .wb-body {
+            background-color: rgb(212, 208, 200);
+            color: black;
+    text-shadow: 0x 0px #0f1089;
+        }
+        
+.wb-close {
+    background-image: url(img/gui/icon/close.svg);
+    background-position: center;
+    background-size: 24px auto;
+    margin-right: 3px;
+    margin-left: -3px;
+}
+.wb-max {
+    background-image: url(img/gui/icon/maximize.svg);
+    background-position: center;
+    background-size: 24px auto;
+    margin-left: -3px;
+}
+.wb-min{
+    background-image: url(img/gui/icon/minimize.svg);
+    background-position: center;
+    background-size: 24px auto;
+    margin-left: -3px;
+}
+
+        .wb-title {
+            text-shadow: 1px 1px #0f1089;
+            font-size: 14px;
+            font-weight: 500;
+        }        
+        
+        
 
     </style>
 <head>
@@ -332,7 +369,7 @@ body{
 </div>
       
 <div class="recycleicon">
-      <img onclick="WinBox.new('Hello world')" src="XP/Icon/0409/915.ico" width="32px">
+      <img onclick="changelog()" src="XP/Icon/0409/915.ico" width="32px">
       <p style="position: absolute; top: 22px; left: 17px">Recycle Bin</p>
 </div>
       
@@ -408,7 +445,7 @@ body{
       <button class="punballX" onclick="document.getElementById('drag3').style.display='none';" aria-label="Close"></button>
     </div>
   </div>
-  <div class="window-body" style="margin: 0px;">
+  <div class="window-body" id="aboutwin" style="margin: 0px;">
       <center>
         <img src="img/banner.png" style="display: block">
           <img src="img/Bitmap138.bmp" style="display: block">
@@ -482,10 +519,33 @@ function kill() {
                 title: "3D Pinball for Windows - Space Cadet",
                 url: "https://rowan-bird.github.io/balls/",
                 width: "620",
-                height: "500"
+                height: "500",
+                    class: [
+                        "no-min",
+                        "no-max",
+                        "no-full",
+                        "no-resize"
+                            ]
             });
             }
-        
+    </script>
+        <script>
+
+        function changelog() {
+            var node = document.getElementById("aboutwin");
+            new WinBox({
+                title: "About Windows",
+                width: "421",
+                height: "330",
+                mount: node.cloneNode(true),
+                    class: [
+                        "no-min",
+                        "no-max",
+                        "no-full",
+                        "no-resize"
+                            ]
+            });
+            }
     </script>
     
 
