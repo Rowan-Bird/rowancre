@@ -220,7 +220,7 @@ body{
 }
         
         
-        .winbox {
+.winbox {
             padding: 0px;
             margin: 0px;
     font-family: "Trebuchet MS";
@@ -585,6 +585,7 @@ body{
             background-position: center;
             background-size: cover;
 }
+
 
     </style>
 

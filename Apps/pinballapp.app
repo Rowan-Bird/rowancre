@@ -1,4 +1,4 @@
-        function newpinball() {
+        function pinball() {
             new WinBox({
                 title: "3D Pinball for Windows - Space Cadet",
                 url: "https://rowan-bird.github.io/balls/",

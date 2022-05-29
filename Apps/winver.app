@@ -1,4 +1,4 @@
-function changelog() {
+function winver() {
             var node = document.getElementById("aboutwin");
             new WinBox({
                 title: "About Windows",

@@ -104,8 +104,317 @@ audio.play();
 <div class="hide">
 <div data-include="Apps/version.html"></div>
 <div data-include="Apps/img/Icedog96.html"></div>
+<div data-include="Apps/img/dserror.html"></div>
 <div data-include="Apps/calc/index.html"></div>
-<div data-include="Apps/img/fileexplorer.html"></div>
+<div>
+<style>
+    html, body {width: 100%; height: 100%; margin: 0px;}
+    
+    .file-explorer {
+        height: calc(100% - 5px);
+        width: calc(100% - 2px);
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+    .file-tree {
+        width: 138px; /* subtract the border. */
+        height: calc(100% - 43px);
+        float: left;
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+    .file-browser {
+        width: calc(100% - 142px); /* subtract the border. */
+        float: left;
+        height: calc(100% - 43px);
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+    .address-bar {
+        
+    }
+    .address-bar input{
+        width: 100%;
+    }
+    
+    
+    /* Menu bar */
+    
+    /*-------------------------------------------*\ Menu \*-------------------------------------------*/
+ ul[role] {
+	 margin: 0;
+	 padding: 0;
+	 list-style: none;
+	 cursor: default;
+}
+ ul[role="menubar"] {
+	 display: flex;
+	 background: #f2f3f3;
+}
+ ul[role="menubar"] > [role="menuitem"] {
+	 position: relative;
+	 padding: 4px 10px;
+}
+ ul[role="menubar"] > [role="menuitem"]:focus, ul[role="menubar"] > [role="menuitem"]:focus-within, ul[role="menubar"] > [role="menuitem"]:hover {
+	 background: #316ac5;
+	 color: #fff;
+	 outline: none;
+}
+ ul[role="menu"] {
+	 position: relative;
+	 min-width: 150px;
+	 padding: 2px;
+	 background: var(--surface);
+	 color: initial;
+	 border: 1px solid rgba(0, 0, 0, 0.4);
+	 box-shadow: 4px 4px 3px -2px rgba(0, 0, 0, 0.5);
+}
+ ul[role="menu"]::before {
+	 content: "";
+	 pointer-events: none;
+	 position: absolute;
+	 left: 28px;
+	 width: 2px;
+	 height: calc(100% - 4px);
+	 box-shadow: inset 1px 0 rgba(0, 0, 0, 0.15), inset -1px 0 #fff;
+}
+ [role="menuitem"] ul[role="menu"] {
+	 display: none;
+	 position: absolute;
+	 left: 0;
+	 top: 100%;
+	 z-index: 99;
+     background-color: #fff;
+}
+ ul[role="menu"] [role="menuitem"] > [role="menu"] {
+	 top: -4px;
+	 left: 100%;
+}
+ ul[role="menu"] > [role="menuitem"] > a, ul[role="menu"] > [role="menuitem"] > button, ul[role="menu"] > [role="menuitem"][aria-haspopup="true"] {
+	 all: unset;
+	 position: relative;
+	 display: block;
+	 width: 100%;
+	 padding: 4px 10px 4px 32px;
+	 box-sizing: border-box;
+	 border: 1px solid transparent;
+}
+ ul[role="menu"] > [role="menuitem"] > a:hover, ul[role="menu"] > [role="menuitem"] > button:hover, ul[role="menu"] > [role="menuitem"][aria-haspopup="true"]:hover, ul[role="menu"] > [role="menuitem"] > a:focus, ul[role="menu"] > [role="menuitem"] > button:focus, ul[role="menu"] > [role="menuitem"][aria-haspopup="true"]:focus {
+	 background: #316ac5;
+     color: white;
+}
+ ul[role="menu"] > [role="menuitem"][aria-haspopup="true"]::after {
+	 content: "";
+	 position: absolute;
+	 top: 50%;
+	 right: 2px;
+	 transform: translateY(-50%);
+	 border: 4px solid transparent;
+	 border-left-color: currentColor;
+}
+ ul [role="menuitem"] {
+	 position: relative;
+}
+ ul [role="menuitem"]:focus > [role="menu"], ul [role="menuitem"]:focus-within > [role="menu"] {
+	 display: block;
+}
+ ul [role="menuitem"].has-divider::after {
+	 content: "";
+	 pointer-events: none;
+	 display: block;
+	 margin: 3px 0 2px;
+	 height: 2px;
+	 margin-left: 28px;
+	 box-shadow: inset 0 1px rgba(0, 0, 0, 0.15), inset 0 -1px #fff;
+}
+ ul [role="menuitem"] img {
+	 position: absolute;
+	 z-index: 1;
+	 left: 2px;
+	 top: 50%;
+	 transform: translateY(-50%);
+	 pointer-events: none;
+}
+ ul.can-hover [role="menuitem"]:hover > [role="menu"] {
+	 display: block;
+}
+ 
+</style>
+
+<div id="fileexplorer" class="file-explorer">
+
+    <ul role="menubar">
+  <li role="menuitem" tabindex="0" aria-haspopup="true">
+    File
+    <ul role="menu">
+      <li role="menuitem" tabindex="0" aria-haspopup="true">
+        New
+        <ul role="menu">
+        <!-- Use 'onclick' for handling MonsterFS (as I am calling it) functions -->
+        <!-- Submenus do not work without <button> -->
+          <li role="menuitem"><button>Folder</button></li>
+          <li role="menuitem"><button id="upload-file">Upload File...</button></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li role="menuitem" tabindex="0" aria-haspopup="true">
+    Help
+    <ul role="menu">
+      <li role="menuitem"><a href="#menu">View Help</a></li>
+      <li role="menuitem"><a href="#menu">About</a></li>
+    </ul>
+  </li>
+</ul>
+    
+    <div class="address-bar">
+        <input type="text" name="address" id="address" />
+    </div>
+    <div class="file-tree">
+        <ul class="tree-view">
+            <li>
+                My Computer
+                <ul id="my-computer">
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div class="file-browser">
+        browser
+    </div>
+    <input type="file" id="new-file" style="display: none;">
+</div>
+<script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+  crossorigin="anonymous"></script>
+
+        <!-- Thank you for helping me with the LocalStorage stuff -->
+<script>
+    var storageMonster = {
+        init: function () {
+            if (this.get("drives") == null){
+                var drives = [];
+                drives.push({ label: "Home Drive", letter: "c", files: [] });
+                this.set("drives", drives);
+            }
+        },   
+        set: function (key, obj){
+            try {
+                var stringObj = JSON.stringify(obj);
+                localStorage.setItem(key, stringObj);
+            }
+            catch (e){
+                console.error("Failed to set object for key " + key);
+            }
+        },
+        get: function (key) {
+            try {
+                var stringObj = localStorage.getItem(key);
+                return JSON.parse(stringObj);
+            }
+            catch (e){
+                console.error("Failed to get object for key " + key);
+            }
+        },
+        list: function () {
+            return Object.keys(localStorage);
+        }
+    };
+    var fileExplorer = {
+        drives: null,
+        init: function (){
+            var drives = storageMonster.get("drives"),
+                $myComputer = $("#my-computer");
+            this.drives = drives;
+            for (i = 0; i < drives.length; i++){
+                var drive = drives[i];
+                $myComputer.append("<li><span class='drive' data-letter='" + drive.letter + "'>(" + drive.letter + ":)</span></li>");
+            }
+        },
+        getDrive: function (letter){
+            var drives = fileExplorer.drives.filter(drive => drive.letter == letter);
+            if (drives.length > 0){
+                return drives[0];
+            }
+            return null;
+        },
+        update: function (drive){
+            var index = fileExplorer.drives.indexOf(drive);
+            fileExplorer.drives.splice(index, 1);
+            fileExplorer.drives.push(drive);
+            storageMonster.set("drives", fileExplorer.drives);
+        },
+        show: function (drive) {
+            var $browser = $(".file-browser"),
+                $files = $("<ul class='tree-view' id='files'></ul>");            
+            drive.files.forEach(function (file) {
+                $files.append("<li>" + file.name + "</li>")
+            });
+            $browser.html($files);
+        }
+    }
+    storageMonster.init();
+    fileExplorer.init();
+    
+    $(function () {
+        var $address = $("#address"),
+            $newFile = $("#new-file");
+       $("body").on("click", ".drive", function (e) {
+           var $this = $(this),
+               letter = $this.data("letter"),
+               drive = fileExplorer.getDrive(letter);
+           if (drive){
+               $address.val(drive.letter + "\\");
+               fileExplorer.show(drive);
+           }
+           else {
+               $address.val("");
+           }           
+       }).on("click", "#upload-file", function (e) {
+           // this should actually be split by the \ and etc. but for now we're just doing root.
+           var address = $address.val();
+           if (address.length) {               
+               $newFile.trigger("click");
+           }
+       }).on("change", "#new-file", function (e) {
+           var $this = $(this);
+           if (this.files.length) {
+               var file = this.files[0];
+               var fileReader = new FileReader();
+               fileReader.onload = () => {
+                   var address = $address.val();
+                    if (address.length) {
+                        var drive = fileExplorer.getDrive(address.substring(0, 1)),
+                            data = fileReader.result,
+                            record = { name: file.name, size: file.size, data: data },
+                            existing = -1;
+                        
+                        for (var i = 0; i < drive.files.length; i++){
+                            var f = drive.files[i];
+                            if (f.name == record.name){
+                                existing = i;
+                                break;
+                            }
+                        }
+                        
+                        if (existing != -1) {
+                            drive.files.splice(existing, 1);
+                            drive.files.push(record);
+                        }
+                        else {
+                            drive.files.push(record);   
+                        }
+                        fileExplorer.update(drive);
+                        fileExplorer.show(drive);
+                    }
+                };
+               fileReader.readAsText(file);
+           }
+       });
+    });
+</script>
+ </div>   
 </div>
 
 <script src="csi.js/csi.min.js"></script>
@@ -123,9 +432,13 @@ audio.play();
   href="https://unpkg.com/xp.css"
 >
 
+<!-- 
+  NOTE: For best results, use Full Page View 
+-->
+
 <head>
 <div class="buildstring">
-<span style="font-family: Tahoma,Verdana,Segoe,sans-serif;  color: white; position: fixed; bottom: 35px; right: 0px;  text-align: right;">Windows XP 2004 Edition Professional (Plus!)<br>For testing purposes only. Build 3010-rc2.rw.000010-1000</span>
+<span style="font-family: Tahoma,Verdana,Segoe,sans-serif;  color: white; position: fixed; bottom: 35px; right: 0px;  text-align: right;">Windows XP 2004 Edition Professional (Plus!)<br>For testing purposes only. Build 3010-rc.rw.000010-1000</span>
     
     <main id="datetime" style="color: white; z-index: 100098; font-size: 12px; position: absolute; bottom: 0; right: 0; height: 32px; background: linear-gradient(rgb(12, 89, 185) 1%, rgb(19, 158, 233) 6%, rgb(24, 181, 242) 10%, rgb(19, 155, 235) 14%, rgb(18, 144, 232) 19%, rgb(13, 141, 234) 63%, rgb(13, 159, 241) 81%, rgb(15, 158, 237) 88%, rgb(17, 155, 233) 91%, rgb(19, 146, 226) 94%, rgb(19, 126, 215) 97%, rgb(9, 91, 201) 100%); border: 1px solid rgb(16, 66, 175); text-align: center; width: 100px; line-height: 32px;">9:54:06 AM</main>
     
@@ -149,14 +462,14 @@ audio.play();
           </div>
           <div class="start-menu-body">
             <div class="start-menu-favorites">
-              <div onclick="icedog()" class="app-item start-menu-item intent-item">
+              <div onclick="iexplore()" class="app-item start-menu-item intent-item">
                 <div  class="icon" style="background-image:url('XP/Icon/0409/1490.ico')"></div>
                 <div class="label">
                   <div class="intent">Internet</div>
                   <div class="program">Internet Explorer</div>
                 </div>
               </div>
-              <div onclick="newpinball()" class="start-menu-item intent-item">
+              <div onclick="pinball()" class="start-menu-item intent-item">
                 <div class="icon" style="background-image:url('XP/Icon/0409/4.ico')"></div>
                 <div class="label">
                   <div class="intent">Pinball</div>
@@ -168,7 +481,7 @@ audio.play();
                 <div class="icon" style="background-image:url('img/Icon_6.ico')"></div>
                 <div class="label">Calculator</div>
               </div>
-              <div onclick="changelog()" class="start-menu-item favorite-item">
+              <div onclick="winver()" class="start-menu-item favorite-item">
                 <div class="icon" style="background-image:url('XP/Icon/0409/14.ico')"></div>
                 <div class="label">About Windows</div>
               </div>
@@ -193,7 +506,7 @@ audio.play();
                 <div class="icon" style="background-image:url('XP/Icon/0409/820.ico')"></div>
                 <div class="label">My Music</div>
               </div>
-              <div onclick="MonsterBrowser()" class="start-menu-item my-item">
+              <div onclick="fserror()" class="start-menu-item my-item">
                 <div class="icon" style="background-image:url('XP/Icon/0409/123.ico')"></div>
                 <div class="label">File System</div>
               </div>
@@ -253,3 +566,4 @@ audio.play();
       }
       setInterval('getDayTime()', 100);
 </script>
+

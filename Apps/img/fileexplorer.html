@@ -193,10 +193,9 @@
         init: function () {
             if (this.get("drives") == null){
                 var drives = [];
-                drives.push({ label: "Home Drive", letter: "c", files: {} });
+                drives.push({ label: "Home Drive", letter: "c", files: [] });
                 this.set("drives", drives);
             }
-            this.set("c:/text.txt", { fileName: "text.txt", data: "This is a text file", mimeType: "text/plain" });
         },   
         set: function (key, obj){
             try {
@@ -230,6 +229,27 @@
                 var drive = drives[i];
                 $myComputer.append("<li><span class='drive' data-letter='" + drive.letter + "'>(" + drive.letter + ":)</span></li>");
             }
+        },
+        getDrive: function (letter){
+            var drives = fileExplorer.drives.filter(drive => drive.letter == letter);
+            if (drives.length > 0){
+                return drives[0];
+            }
+            return null;
+        },
+        update: function (drive){
+            var index = fileExplorer.drives.indexOf(drive);
+            fileExplorer.drives.splice(index, 1);
+            fileExplorer.drives.push(drive);
+            storageMonster.set("drives", fileExplorer.drives);
+        },
+        show: function (drive) {
+            var $browser = $(".file-browser"),
+                $files = $("<ul class='tree-view' id='files'></ul>");            
+            drive.files.forEach(function (file) {
+                $files.append("<li>" + file.name + "</li>")
+            });
+            $browser.html($files);
         }
     }
     storageMonster.init();
@@ -241,9 +261,10 @@
        $("body").on("click", ".drive", function (e) {
            var $this = $(this),
                letter = $this.data("letter"),
-               drive = fileExplorer.drives.filter(drive => drive.letter == letter);
+               drive = fileExplorer.getDrive(letter);
            if (drive){
-               $address.val(drive[0].letter + "\\");
+               $address.val(drive.letter + "\\");
+               fileExplorer.show(drive);
            }
            else {
                $address.val("");
@@ -251,8 +272,7 @@
        }).on("click", "#upload-file", function (e) {
            // this should actually be split by the \ and etc. but for now we're just doing root.
            var address = $address.val();
-           if (address.length) {
-               var drive = fileExplorer.drives.filter(drive => drive.letter == address.substring(0, 1));
+           if (address.length) {               
                $newFile.trigger("click");
            }
        }).on("change", "#new-file", function (e) {
@@ -263,10 +283,29 @@
                fileReader.onload = () => {
                    var address = $address.val();
                     if (address.length) {
-                        var drive = fileExplorer.drives.filter(drive => drive.letter == address.substring(0, 1));                   
-                        drive.files[file.name] = { name: file.name, size: file.size, data: fileReader.result };
-                        storageMonster.set("drives", fileExplorer.drives);
-                    }                   
+                        var drive = fileExplorer.getDrive(address.substring(0, 1)),
+                            data = fileReader.result,
+                            record = { name: file.name, size: file.size, data: data },
+                            existing = -1;
+                        
+                        for (var i = 0; i < drive.files.length; i++){
+                            var f = drive.files[i];
+                            if (f.name == record.name){
+                                existing = i;
+                                break;
+                            }
+                        }
+                        
+                        if (existing != -1) {
+                            drive.files.splice(existing, 1);
+                            drive.files.push(record);
+                        }
+                        else {
+                            drive.files.push(record);   
+                        }
+                        fileExplorer.update(drive);
+                        fileExplorer.show(drive);
+                    }
                 };
                fileReader.readAsText(file);
            }

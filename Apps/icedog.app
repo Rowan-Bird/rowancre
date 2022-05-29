@@ -1,4 +1,4 @@
-function icedog() {
+function iexplore() {
             new WinBox({
                 title: "Internet Explorer",
                 width: "800",
