@@ -3,7 +3,7 @@ function icedog() {
                 title: "Internet Explorer",
                 width: "800",
                 height: "550",
-                url: "Apps/img/Icedog96.html",
+                url: "Apps/img/icedog96.html",
                 id: "icedog",
                     class: [
                         "background"
