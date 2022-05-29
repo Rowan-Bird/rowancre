@@ -1,0 +1,251 @@
+
+
+<title>Windows 2004</title>
+<div id="welcome">
+    <style>
+    
+        .screen, .buildstring {
+            opacity: 0;
+        }
+
+    
+    body{
+  font-family: Franklin Gothic; 
+  font-style: initial;
+  color: #fff;
+}
+
+.vl {
+  height: 65%;
+  position: fixed;
+  left: 50%;
+    top: 17%;
+  right: 50%;
+  width: 2px;
+background: linear-gradient(0deg, rgba(0,0,0,0) 0%, rgba(220,220,220,1) 50%, rgba(0,0,0,0) 100%); 
+}
+    
+    .logonwindow {
+        background: linear-gradient(90deg, rgba(26, 47, 153, 100) 0%, rgba(200, 200, 200, 0) 100%);
+        width: 320px;
+        height: 76px;
+        top: 43%;
+        left: 55%;
+        position: fixed;
+        border-style: solid;
+        border-color: white;
+        border-top-left-radius: 7px;
+        border-bottom-left-radius: 7px;
+        border-width: 0px;
+        border-right-style: none;
+    }
+    
+    .logonborder {
+                border-top-left-radius: 8px;
+        border-bottom-left-radius: 8px;
+        border-width: 0px;
+                top: 43%;
+        left: 55%;
+        position: fixed;
+        width: 321px;
+        height: 78px;
+        background: linear-gradient(90deg, rgba(255, 255, 255, 100) 0%, rgba(200, 200, 200, 0) 100%);
+    }
+    
+    .rounded {
+        border-radius: 8px;
+        border-style: solid;
+        border-width: 1px;
+    }
+        
+.hide-loader{
+display:none;
+}
+</style>
+
+  <div style="background-image: url(assets/welcome-long.png); width: 100%; height: 100%; background-position: left; background-size: cover; background-attachment: fixed; margin: 0%;">
+      <div class="vl"></div>
+      <center>       
+        <div class="logonborder">
+          <div style="margin-top: 1px;" class="logonwindow">
+              <img src="img/chess.jpg" width="64" style="border-width: 1px; border-color: yellow; border-style: solid; border-radius: 4px; margin: 5px; left: 1px; position: absolute">
+          <p style="color: white; font-size: 24; position: absolute; margin-left: 80px; bottom: 17px;">RowanCrE</p>
+              <input  id="rounded" type="text" style="position: relative; margin-right: 9px; margin-top: 65px; border-radius: 3px; border-style: solid; border-width: 1px; height: 24">
+              <img onclick="remove()" src="img/gui/backup.jpg" style="position: fixed; margin-left: 15px; margin-top: 65px;" width="24">
+          </div>
+        </div>
+<img src="assets/winxp.png" width="384px" style="top: 30%; bottom: 40%; margin-left: -400px; position: fixed;">
+
+          </center>
+  </div>
+<script>
+function remove()
+{
+var element = document.getElementById("welcome");
+var audio = new Audio('/Media/Windows XP Startup.wav');
+element.remove();
+audio.play();
+}
+</script>
+
+</div>
+<link rel="stylesheet" href="SDK.css">
+<link
+  rel="stylesheet"
+  href="https://unpkg.com/xp.css"
+>   
+    <script src="winbox.bundle.js"></script>
+       <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="SDK.js"></script>  
+<script src="/aaaFS/balls.js"></script>
+
+<!-- import contents of apps -->
+<div class="hide">
+<div data-include="/Apps/version.html"></div>
+<div data-include="/Apps/img/Icedog96.html"></div>
+<div data-include="/Apps/calc/index.html"></div>
+<div data-include="/Apps/img/fileexplorer.html"></div>
+</div>
+
+<script src="csi.js/csi.min.js"></script>
+<!-- applib -->
+<script src="/Apps/pinballapp.app"></script>
+<script src="/Apps/winver.app"></script>
+<script src="/Apps/icedog.app"></script>
+<script src="/Apps/calc.app"></script>
+<script src="/Apps/FSBrowse.app"></script>
+
+<!-- End of applib -->
+
+<link
+  rel="stylesheet"
+  href="https://unpkg.com/xp.css"
+>
+
+<!-- 
+  NOTE: For best results, use Full Page View 
+-->
+
+<head>
+<div class="buildstring">
+<span style="font-family: Tahoma,Verdana,Segoe,sans-serif;  color: white; position: fixed; bottom: 35px; right: 0px;  text-align: right;">Windows XP 2004 Edition Professional (Plus!)<br>For testing purposes only. Build 3010-rc.rw.000010-1000</span>
+</div>
+</head>
+
+<div class="container">
+  <div class="screen">
+    <div class="background" style="height: 100%; z-index: 10;"></div>
+    <div class="taskbar">
+      <div class="main-section">
+        <input id="start-menu-active" type="checkbox" checked>
+        <label class="start-button" for="start-menu-active">
+        </label>
+        <div class="start-menu">
+          <div class="start-menu-header">
+            <div class="account-image-wrapper">
+              <img src="/img/chess.jpg" width="48">
+            </div>
+            <h1 class="account-name">RowanCrE</h1>
+          </div>
+          <div class="start-menu-body">
+            <div class="start-menu-favorites">
+              <div onclick="icedog()" class="app-item start-menu-item intent-item">
+                <div  class="icon" style="background-image:url('/XP/Icon/0409/1490.ico')"></div>
+                <div class="label">
+                  <div class="intent">Internet</div>
+                  <div class="program">Internet Explorer</div>
+                </div>
+              </div>
+              <div onclick="newpinball()" class="start-menu-item intent-item">
+                <div class="icon" style="background-image:url('/XP/Icon/0409/4.ico')"></div>
+                <div class="label">
+                  <div class="intent">Pinball</div>
+                  <div class="program">Pinball</div>
+                </div>
+              </div>
+              <div class="divider"></div>
+              <div onclick="calc()" class="start-menu-item favorite-item">
+                <div class="icon" style="background-image:url('/img/Icon_6.ico')"></div>
+                <div class="label">Calculator</div>
+              </div>
+              <div onclick="changelog()" class="start-menu-item favorite-item">
+                <div class="icon" style="background-image:url('/XP/Icon/0409/14.ico')"></div>
+                <div class="label">About Windows</div>
+              </div>
+              <div class="all-programs">
+                <div class="divider"></div>
+              </div>
+            </div>
+            <div class="start-menu-shortcuts">
+              <div class="start-menu-item my-item">
+                <div class="icon" style="background-image: url('/XP/Icon/0409/796.ico'); width: 24px; height: 24px;"></div>
+                <div class="label">My Documents</div>
+              </div>
+              <div class="start-menu-item my-item">
+                <div class="icon" style="background-image:url('/XP/Icon/0409/1409.ico')"></div>
+                <div class="label">My Recent Documents</div>
+              </div>
+              <div class="start-menu-item my-item">
+                <div class="icon" style="background-image:url('/XP/Icon/0409/808.ico')"></div>
+                <div class="label">My Pictures</div>
+              </div>
+              <div class="start-menu-item my-item">
+                <div class="icon" style="background-image:url('/XP/Icon/0409/820.ico')"></div>
+                <div class="label">My Music</div>
+              </div>
+              <div onclick="MonsterBrowser()" class="start-menu-item my-item">
+                <div class="icon" style="background-image:url('/XP/Icon/0409/123.ico')"></div>
+                <div class="label">File System</div>
+              </div>
+              <div class="start-menu-item my-item">
+                <div class="icon" style="background-image:url('https://dl.dropboxusercontent.com/u/19745853/Win%20XP%20icons/18.ico')"></div>
+                <div class="label">My Network Places</div>
+              </div>
+              
+              <div class="divider"></div>
+              
+              <div class="start-menu-item">
+                <div class="icon" style="background-image:url('https://dl.dropboxusercontent.com/u/19745853/Win%20XP%20icons/22.ico')"></div>
+                <div class="label">Control Panel</div>
+              </div>
+              <div class="start-menu-item">
+                <div class="icon" style="background-image:url('https://dl.dropboxusercontent.com/u/19745853/Win%20XP%20icons/138.ico')"></div>
+                <div class="label">Printers and Faxes</div>
+              </div>
+              
+              <div class="divider"></div>
+              
+              <div class="start-menu-item">
+                <div class="icon" style="background-image:url('https://dl.dropboxusercontent.com/u/19745853/Win%20XP%20icons/24.ico')"></div>
+                <div class="label">Help and Support</div>
+              </div>
+              <div class="start-menu-item">
+                <div class="icon" style="background-image:url('https://dl.dropboxusercontent.com/u/19745853/Win%20XP%20icons/23.ico')"></div>
+                <div class="label">Search</div>
+              </div>
+              <div class="start-menu-item">
+                <div class="icon" style="background-image:url('https://dl.dropboxusercontent.com/u/19745853/Win%20XP%20icons/25.ico')"></div>
+                <div class="label">Run...</div>
+              </div>
+            </div>
+          </div>
+          <div class="start-menu-footer">
+          </div>
+        </div>
+      </div>
+      <div class="quick-section"></div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<script>
+    $("body").on("click", ".background", function (e){
+        $('#start-menu-active').prop('checked', false);    
+    });    
+</script>

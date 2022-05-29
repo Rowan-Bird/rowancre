@@ -1,0 +1,148 @@
+body {
+    font-size: 12px;
+    font-family: 'Lato', sans-serif;
+    background-color: #fbfbfb;
+
+    background: url('https://www.hdwallpapers.in/walls/windows_7_original-wide.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0 0.6em;
+
+    background-color: rgba(0,0,0,0.30);
+    border-bottom-right-radius: 10px;
+}
+header h5 {
+    color: white;
+    font-family: sans-serif;
+    font-size: 1.2em;
+    margin: 1em;
+}
+header a {
+    color: white;
+}
+
+main {
+    width: 226px;
+    padding-bottom: 12px;
+    background-color: #d9e4f1;
+    border: solid 1px gray;
+}
+
+.menu {
+    border-bottom: solid 1px gray;
+    font-size: 16px;
+    padding: 2px 4px;
+
+    background: linear-gradient(#f3f6fa 0%, #f3f6fa 34%, #D7E2EF 38%, #D7E2EF 100%);
+}
+.menu span {
+    text-decoration: underline;
+}
+
+.display {
+    position: relative;
+    width: 86%;
+    margin: 15px 0 3px 14px;
+    border: solid 1px gray;
+    border-radius: 3px;
+
+    background: linear-gradient(#e5effb 0%, #E2EAF3 60%, #f5f8fd 80%, white 100%);
+    box-shadow: 0px -1px 14px white inset;
+}
+
+.display div {
+    color: black;
+    text-align: right;
+}
+
+.outer-div {
+    width:92%;
+    margin-left:auto;
+    margin-right:auto;
+    text-align:right;
+    overflow:hidden;
+    white-space: nowrap;
+  }
+.inner-div {
+    float:right;
+}
+
+.sm-text {
+    font-size: 11px;
+    letter-spacing: 2px;
+    min-height: 16px;
+    padding-top: 3px;
+    margin: 0;
+}
+.lg-text {
+    font-size: 20px;
+    padding-left: 10px;
+    margin: 0;
+}
+.m-icon {
+    position: absolute;
+    left: 4px;
+    bottom: 8px;
+    display: none;
+}
+.error {
+    min-height: 12px;
+    font-size: 10px;
+    line-height: 8px;
+    padding-right: 8px;
+}
+
+.keyboard {
+    width: 100%;
+    margin: 0 0 0 14px;
+}
+.keyboard-bot {
+    margin-left: 3px;
+}
+
+button {
+    width: 37px;
+    height: 29px;
+    margin: 2px 0;
+    border: 1px solid rgba(0,0,0,.4);
+    border-radius: 2px;
+    
+    background: linear-gradient(#F0F6FB 0%, #E2EAF3 49%, #D5E0ED 50%, #D7E2EF 100%);
+    box-shadow: 0px -1px 6px white inset;
+}
+button:hover {
+	background: linear-gradient(#FFE3B5 50%, #FCBF5D 50%);
+	box-shadow: 1px 1px 2px #ffb76b,0px -1px 5px white inset;
+	border-color: #FCBF5D;
+}
+.btn-white {
+    font-size: 14px;
+    background: linear-gradient(#f2f5f9 0%, #f2f5f9 49%, #eef2f7 50%, #eef2f7 100%);
+    box-shadow: 1.6px 1.6px 0px white inset, -1.6px -1.6px 0px white inset;
+}
+
+.btn-wide {
+    width: 77px;
+}
+.btn-tall {
+    position: absolute;
+    left: -1px;
+    height: 63px;
+}
+
+.bot-left {
+    display: inline-block;
+    width: 70%;
+    margin-left: 11px;
+}
+.bot-right {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    width: 20%;
+}

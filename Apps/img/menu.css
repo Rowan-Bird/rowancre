@@ -1,0 +1,98 @@
+/*-------------------------------------------*\ Menu \*-------------------------------------------*/
+ ul[role] {
+     font-family: Tahoma, sans-serif;
+	 margin: 0;
+	 padding: 4px;
+	 list-style: none;
+	 cursor: default;
+     font-size: 12px;
+}
+ ul[role="menubar"] {
+	 display: flex;
+}
+ ul[role="menubar"] > [role="menuitem"] {
+	 position: relative;
+	 padding: 4px 6px;
+}
+ ul[role="menubar"] > [role="menuitem"]:focus, ul[role="menubar"] > [role="menuitem"]:focus-within, ul[role="menubar"] > [role="menuitem"]:hover {
+	 background: #39f;
+	 color: #fff;
+	 outline: none;
+}
+ ul[role="menu"] {
+	 position: relative;
+	 min-width: 150px;
+	 padding: 2px;
+	 background: var(--surface);
+	 color: initial;
+	 border: 1px solid rgba(0, 0, 0, 0.4);
+	 box-shadow: 4px 4px 3px -2px rgba(0, 0, 0, 0.5);
+}
+ ul[role="menu"]::before {
+	 content: "";
+	 pointer-events: none;
+	 position: absolute;
+	 left: 28px;
+	 width: 2px;
+	 height: calc(100% - 4px);
+	 box-shadow: inset 1px 0 rgba(0, 0, 0, 0.15), inset -1px 0 #fff;
+}
+ [role="menuitem"] ul[role="menu"] {
+	 display: none;
+	 position: absolute;
+	 left: 0;
+	 top: 100%;
+	 z-index: 99;
+}
+ ul[role="menu"] [role="menuitem"] > [role="menu"] {
+	 top: -4px;
+	 left: 100%;
+}
+	 position: relative;
+	 display: block;
+	 width: 100%;
+	 padding: 4px 10px 4px 32px;
+	 box-sizing: border-box;
+	 border: 1px solid transparent;
+	 border-radius: 3px;
+}
+ ul[role="menu"] > [role="menuitem"] > a:hover, ul[role="menu"] > [role="menuitem"] > button:hover, ul[role="menu"] > [role="menuitem"][aria-haspopup="true"]:hover, ul[role="menu"] > [role="menuitem"] > a:focus, ul[role="menu"] > [role="menuitem"] > button:focus, ul[role="menu"] > [role="menuitem"][aria-haspopup="true"]:focus {
+	 background: linear-gradient(to bottom, rgba(255, 255, 255, 0.5), rgba(184, 214, 251, 0.5) 60%, rgba(184, 214, 251, 0.5) 90%, rgba(255, 255, 255, 0.8));
+	 border-color: #b8d6fb;
+}
+ ul[role="menu"] > [role="menuitem"][aria-haspopup="true"]::after {
+	 content: "";
+	 position: absolute;
+	 top: 50%;
+	 right: 2px;
+	 transform: translateY(-50%);
+	 border: 4px solid transparent;
+	 border-left-color: currentColor;
+}
+ ul [role="menuitem"] {
+	 position: relative;
+}
+ ul [role="menuitem"]:focus > [role="menu"], ul [role="menuitem"]:focus-within > [role="menu"] {
+	 display: block;
+}
+ ul [role="menuitem"].has-divider::after {
+	 content: "";
+	 pointer-events: none;
+	 display: block;
+	 margin: 3px 0 2px;
+	 height: 2px;
+	 margin-left: 28px;
+	 box-shadow: inset 0 1px rgba(0, 0, 0, 0.15), inset 0 -1px #fff;
+}
+ ul [role="menuitem"] img {
+	 position: absolute;
+	 z-index: 1;
+	 left: 2px;
+	 top: 50%;
+	 transform: translateY(-50%);
+	 pointer-events: none;
+}
+ ul.can-hover [role="menuitem"]:hover > [role="menu"] {
+	 display: block;
+}
+ 

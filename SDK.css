@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<link rel="stylesheet" type="text/css" href="file-explorer/file-explorer.css">
+<script type="text/javascript" src="file-explorer/file-explorer.js"></script> 
+<script src='https://cdn.jsdelivr.net/gh/nathancarter/jsfs@1/release/jsfs.min.js'></script>
+
+<head onload="var el = document.querySelect('div'); el.style.display = 'none';">
+    <script>
+         window.onload = function() {
+        document.getElementById('drag1').style.display='none';
+        document.getElementById('drag2').style.display='none';
+        document.getElementById('drag3').style.display='none';
+        document.getElementById('drag4').style.display='none';
+    }
+         
+     </script>
+          <script>
+          
+    
+
+      </script>
+     
+     
+     	<link rel="stylesheet" href="CSS/superfish.css" media="screen">
+<script src="jquery-3.6.0.min.js"></script>
+       <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+     <link rel stylesheet="style.css">
+     <link rel stylesheet="modern.less">
+    
+    <html>
+<head>
+    <script src="winbox.bundle.js"></script>
+</head>
+        <script type="module">
+  import WinBox from "https://unpkg.com/winbox@0.2.0/src/js/winbox.js";
+</script>
+<body></body>
+</html>
+    
+</head>
+
+
+
+
+
+<html lang="en">
+    
+    <style>
+        
+        html {
+            margin: 0px;
+            background-color: #3A6EA5;
+            background-image: url(img/Vortec%20space.jpg);
+        }
+        
+        .body {
+        }
+
+html, body {margin: 0; height: 100%; overflow: hidden}
+ 
+        .taskbar {
+            background-image: url(img/taskbar.png)
+        }
+        
+        
+.wb-full  { display: none }
+
+        
+        .window {
+            
+        position: absolute;
+        margin: auto;
+        }
+        
+        .tray{
+            background-image: url(corner.png);
+            position: absolute;
+            bottom: 4px;
+            right: 0px;
+            z-index: 100;
+            height: 28px;
+            width: 150px;
+        }
+        
+        .CMDicon {
+            text-align: center;
+            width: 100px;
+            position: absolute;
+            color: white;
+            text-shadow: 1px 1px black;
+        }
+                .punballicon {
+                    top: 110px;
+            text-align: center;
+            width: 100px;
+            position: absolute;
+            color: white;
+            text-shadow: 1px 1px black;
+        }
+        .webampicon {
+            top: 170px;
+            text-align: center;
+            width: 100px;
+            position: absolute;
+            color: white;
+            text-shadow: 1px 1px black;
+        }
+        
+        .discordicon {
+            top: 230px;
+            text-align: center;
+            width: 100px;
+            position: absolute;
+            color: white;
+            text-shadow: 1px 1px black;
+        }
+        
+        .recycleicon {
+            bottom: 60px;
+            right: 0px;
+            text-align: center;
+            width: 100px;
+            position: absolute;
+            color: white;
+            text-shadow: 1px 1px black;
+        }
+
+        .loader-wrapper {
+            width: 100%;
+            height: 100%;
+            position: static;
+            top: 0;
+            left: 0;
+            display: flex;
+            z-index: 10;
+            background-color: black;
+        }
+        
+        .wb-body {
+            /* the width of window frame border: */
+            margin: 4px;
+            color: #fff;
+            background: #131820;
+        }
+        
+        
+        
+        
+        
+        @import url('https://fonts.googleapis.com/css?family=Roboto:100,300,700');
+body{ 
+  font-family: 'Roboto', sans-serif; 
+  color: #fff;
+}
+.no {
+  position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+ 
+}
+.box{
+  width: 9px;
+  height: 100%;
+  background: linear-gradient(to bottom, #2838c7 0%,#5979ef 17%,#869ef3 32%,#869ef3 45%,#5979ef 59%,#2838c7 100%);
+  display: inline-block;
+  margin-right: 2px;
+  animation: loader 2s infinite;
+  animation-timing-function: linear;
+}
+.logo{
+  width: 270px;
+  margin: 50px auto;
+    color: white;
+}
+.logo p{
+  margin: 0;
+  padding: 0;  
+}
+.top{
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 16px;
+}
+.top:after{
+  content:"\00a9";
+  font-size: 10px;
+  position: relative;
+  top: -5px;
+  margin-left: 2px;
+}
+.mid{
+  font-size: 46px;
+  font-weight: 700;
+  line-height: 36px;  
+}
+.mid span{
+  font-size: 22px;
+  display: inline-block;
+  vertical-align: top;
+  color: #FF6821;
+  margin-top: -8px;
+}
+.logo .bottom{
+  font-size: 30px;
+  font-weight: 300;
+  line-height: 30px;
+  margin-left: 5px;
+  
+}
+@keyframes loader{
+  0%{
+    transform: translate(-30px);
+  }
+  100%{
+    transform: translate(150px);
+  }
+}
+        
+        
+        .winbox {
+            padding: 0px;
+            margin: 0px;
+    font-family: "Trebuchet MS";
+    background: linear-gradient(180deg,#0997ff,#0053ee 8%,#0050ee 40%,#06f 88%,#06f 93%,#005bff 95%,#003dd7 96%,#003dd7 35px);
+    background-color: #003dd7;
+    background-repeat: no-repeat;
+    background-size: auto 35px;
+    padding:3px 5px 3px 3px;
+    border-top:1px solid #0831d9;
+    border-left:1px solid #0831d9;
+    border-right:1px solid #001ea0;
+    border-top-left-radius:8px;
+    border-top-right-radius:7px;
+    font-size:13px;
+    height: 21px;
+    border-top: 1px solid #0831d9;
+    border-left: 1px solid #0831d9;
+    border-right: 1px solid #001ea0;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 7px;
+    font-size: 11px;
+    height: 21px;
+    box-shadow: inset -1px -1px #00138c, inset 1px 1px #0831d9, inset -2px -2px #001ea0, inset 2px 2px #166aee;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    padding: 0 0 3px 0;
+}
+
+        .wb-body {
+            background-color: rgb(212, 208, 200);
+            color: black;
+    text-shadow: 0x 0px #0f1089;
+        border-width: 
+        }
+        
+.wb-close {
+    background-image: url(img/gui/icon/close.svg);
+    background-position: center;
+    background-size: 24px auto;
+    margin-right: 3px;
+    margin-left: -3px;
+}
+.wb-max {
+    background-image: url(img/gui/icon/maximize.svg);
+    background-position: center;
+    background-size: 24px auto;
+    margin-left: -3px;
+}
+.wb-min{
+    background-image: url(img/gui/icon/minimize.svg);
+    background-position: center;
+    background-size: 24px auto;
+    margin-left: -3px;
+}
+
+        .wb-title {
+            text-shadow: 1px 1px #0f1089;
+            font-size: 14px;
+            font-weight: 500;
+        }    
+
+.winbox:not(.focus) {
+                padding: 0px;
+            margin: 0px;
+    font-family: "Trebuchet MS";
+    background: linear-gradient(180deg,#98d1fa,#8dadeb 8%,#8baae8 40%,#97c0fc 88%,#97c0fc 93%,#96bcff 95%,#7b94d1 96%,#7a92cf 35px);
+        background-color: #98d1fa;
+    background-repeat: no-repeat;
+    background-size: auto 35px;
+    padding:3px 5px 3px 3px;
+    border-top:1px solid #98d1fa;
+    border-left:1px solid #98d1fa;
+    border-right:1px solid #6c92ad;
+    border-top-left-radius:8px;
+    border-top-right-radius:7px;
+    font-size:13px;
+    height: 21px;
+    border-top:1px solid #98d1fa;
+    border-left:1px solid #98d1fa;
+    border-right:1px solid #6c92ad;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 7px;
+    font-size: 11px;
+    height: 21px;
+    box-shadow: inset -1px -1px #6c92ad, inset 1px 1px #98d1fa, inset -2px -2px #6c92ad, inset 2px 2px #6c92ad;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    padding: 0 0 3px 0;
+}
+
+.winbox:not(.focus) .wb-close {
+    background-image: url(img/gui/icon/close-nofocus.svg);
+    background-position: center;
+    background-size: 24px auto;
+    margin-right: 3px;
+    margin-left: -3px;
+}
+
+.winbox:not(.focus) .wb-max {
+    background-image: url(img/gui/icon/maximize-nofocus.svg);
+    background-position: center;
+    background-size: 24px auto;
+    margin-left: -3px;
+}
+
+.winbox:not(.focus) .wb-min {
+    background-image: url(img/gui/icon/minimize-nofocus.svg);
+    background-position: center;
+    background-size: 24px auto;
+    margin-left: -3px;
+}
+
+.hide {display: none;}
+
+ .screen .taskbar {
+	 position: absolute;
+	 z-index: 100;
+	 bottom: 0;
+	 left: 0;
+	 width: 100%;
+}
+ .screen .taskbar .main-section {
+	 height: 100%;
+	 background: linear-gradient(to bottom, #245edb 0%, #3f8cf3 9%, #245edb 18%, #245edb 92%, #333 100%) center/cover no-repeat;
+}
+ .screen .taskbar .main-section .start-button {
+	 position: relative;
+	 display: inline-block;
+	 font-size: 18px;
+	 background: url('img/standard.png');
+	 left: -20px;
+     height: 31px;
+     width: 95px;
+}
+ .screen .taskbar .main-section .start-button::before {
+	 content: '';
+	 position: relative;
+	 display: inline-block;
+	 height: 15px;
+	 width: 15px;
+	 top: 1px;
+	 transform: skewX(3deg);
+	 -webkit-filter: drop-shadow(1px 1px 1px #333);
+}
+ .screen .taskbar .main-section .start-menu {
+	 display: none;
+	 position: absolute;
+	 background-color: #0c8dea;
+	 width: 380px;
+	 height: 550px;
+	 left: 0%;
+	 bottom: 100%;
+	 z-index: -50;
+	 border-radius: 5px 5px 0px 0px;
+	 box-shadow: 2px 6px 10px #333, -2px 0px 5px rgba(20, 20, 20, 0.6) inset, 2px 0px 3px #7fbce8 inset;
+	 overflow: hidden;
+}
+ .screen .taskbar .main-section .start-menu .start-menu-header {
+	 display: flex;
+	 align-items: center;
+	 height: 65px;
+	 box-shadow: 3px 2px 3px #7fbce8 inset;
+	 background: linear-gradient(to bottom, #245edb 0%, #0c8dea 100%);
+	 padding: 8px 0px 7px 8px;
+}
+ .screen .taskbar .main-section .start-menu .start-menu-header .account-image-wrapper {
+	 background-color: white;
+	 border-radius: 5px;
+	 padding: 2px;
+	 height: 52px;
+	 display: inline-block;
+	 box-shadow: 2px 2px 4px #333;
+}
+ .screen .taskbar .main-section .start-menu .start-menu-header .account-name {
+	 display: inline-block;
+	 margin: 0;
+	 color: white;
+	 font-size: 18px;
+	 font-weight: normal;
+	 margin-left: 10px;
+	 text-shadow: 0px 0px 3px #555;
+}
+ .screen .taskbar .main-section .start-menu .start-menu-body {
+	 position: relative;
+	 display: flex;
+	 height: calc(100% - 65px - 43px);
+	 background-color: white;
+	 border: 1px solid #0c8dea;
+	 margin: 0 1px;
+	 overflow: hidden;
+}
+ .screen .taskbar .main-section .start-menu .start-menu-body::before {
+	 content: '';
+	 position: absolute;
+	 border-radius: 50%;
+	 box-shadow: 0px 4px 5px #e88f0b;
+	 z-index: 10;
+}
+ .screen .taskbar .main-section .start-menu .start-menu-body .start-menu-item {
+	 display: flex;
+	 align-items: center;
+	 padding: 5px;
+	 font-size: 11px;
+}
+ .screen .taskbar .main-section .start-menu .start-menu-body .start-menu-item > * {
+	 display: inline-block;
+}
+ .screen .taskbar .main-section .start-menu .start-menu-body .start-menu-item .icon {
+	 height: 30px;
+	 width: 30px;
+	 background-size: contain;
+	 background-position: center;
+	 background-repeat: no-repeat;
+}
+ .screen .taskbar .main-section .start-menu .start-menu-body .start-menu-item .label {
+	 margin-left: 5px;
+}
+ .screen .taskbar .main-section .start-menu .start-menu-body .start-menu-item .label .intent {
+	 font-weight: bold;
+	 color: #373738;
+}
+ .screen .taskbar .main-section .start-menu .start-menu-body .start-menu-item .label .program {
+	 color: #808080;
+}
+ .screen .taskbar .main-section .start-menu .start-menu-body .start-menu-item:hover {
+	 background-color: #3d64bd;
+	 color: white;
+}
+ .screen .taskbar .main-section .start-menu .start-menu-body .start-menu-item:hover .label {
+	 color: white;
+}
+ .screen .taskbar .main-section .start-menu .start-menu-body .divider {
+	 margin: 5px 0px;
+	 height: 1px;
+	 background: linear-gradient(to right, white 0%, #d3d3c8 50%, white 100%) center/cover no-repeat;
+}
+ .screen .taskbar .main-section .start-menu .start-menu-body .start-menu-favorites {
+	 position: relative;
+	 display: inline-flex;
+	 flex-direction: column;
+	 height: 100%;
+	 width: 50%;
+	 padding: 8px;
+}
+ .screen .taskbar .main-section .start-menu .start-menu-body .start-menu-favorites .start-menu-item.intent-item .label .intent {
+	 font-weight: bold;
+	 color: #373738;
+}
+ .screen .taskbar .main-section .start-menu .start-menu-body .start-menu-favorites .start-menu-item.intent-item .label .program {
+	 color: #808080;
+}
+ .screen .taskbar .main-section .start-menu .start-menu-body .start-menu-favorites .start-menu-item.intent-item:hover .label .intent, .screen .taskbar .main-section .start-menu .start-menu-body .start-menu-favorites .start-menu-item.intent-item:hover .label .program {
+	 color: inherit;
+}
+ .screen .taskbar .main-section .start-menu .start-menu-body .start-menu-favorites .start-menu-item.favorite-item .label {
+	 color: #373738;
+}
+ .screen .taskbar .main-section .start-menu .start-menu-body .start-menu-favorites .start-menu-item.favorite-item:hover .label {
+	 color: white;
+}
+ .screen .taskbar .main-section .start-menu .start-menu-body .start-menu-favorites .all-programs {
+	 position: absolute;
+	 bottom: 0;
+	 left: 0;
+	 width: 100%;
+	 padding: 0px 8px 8px 8px;
+}
+ .screen .taskbar .main-section .start-menu .start-menu-body .start-menu-favorites .all-programs .start-menu-item.all-programs-button {
+	 display: flex;
+	 align-items: center;
+	 justify-content: center;
+	 font-size: 11px;
+	 font-weight: bold;
+	 color: #373738;
+	 padding: 5px 0px;
+}
+ .screen .taskbar .main-section .start-menu .start-menu-body .start-menu-favorites .all-programs .start-menu-item.all-programs-button::after {
+	 content: '';
+	 background: url('https://dl.dropboxusercontent.com/u/19745853/Win%20XP%20icons/246.ico') center/contain no-repeat;
+	 display: inline-block;
+	 width: 20px;
+	 height: 20px;
+	 margin-left: 5px;
+}
+ .screen .taskbar .main-section .start-menu .start-menu-body .start-menu-favorites .all-programs .start-menu-item.all-programs-button:hover {
+	 color: white;
+}
+ .screen .taskbar .main-section .start-menu .start-menu-body .start-menu-shortcuts {
+	 display: inline-flex;
+	 flex-direction: column;
+	 height: 100%;
+	 width: 50%;
+	 padding: 8px;
+	 background: #d3e5fa;
+	 border-left: 1px solid #95bdee;
+}
+ .screen .taskbar .main-section .start-menu .start-menu-body .start-menu-shortcuts .start-menu-item .icon {
+	 width: 25px;
+	 height: 25px;
+}
+ .screen .taskbar .main-section .start-menu .start-menu-body .start-menu-shortcuts .start-menu-item .label {
+	 color: #29356c;
+	 font-size: 10px;
+}
+ .screen .taskbar .main-section .start-menu .start-menu-body .start-menu-shortcuts .start-menu-item:hover .label {
+	 color: white;
+}
+ .screen .taskbar .main-section .start-menu .start-menu-body .start-menu-shortcuts .start-menu-item.my-item .label {
+	 font-weight: bold;
+}
+ .screen .taskbar .main-section .start-menu .start-menu-body .start-menu-shortcuts .start-menu-item.my-item:hover .label {
+	 color: white;
+}
+ .screen .taskbar .main-section .start-menu .start-menu-body .start-menu-shortcuts .divider {
+	 background: linear-gradient(to right, transparent 0%, #aebad6 50%, transparent 100%) center/cover no-repeat;
+}
+ .screen .taskbar .main-section .start-menu .start-menu-footer {
+	 height: 43px;
+	 background: linear-gradient(to top, #245edb 0%, #0c8dea 100%);
+	 box-shadow: -2px -2px 5px rgba(20, 20, 20, 0.6) inset;
+}
+ .screen .taskbar .main-section #start-menu-active {
+	 display: none;
+     
+}
+ .screen .taskbar .main-section #start-menu-active:checked ~ .start-button {
+		 position: relative;
+	 display: inline-block;
+	 font-size: 18px;
+	 background: url('img/pressed.png');
+     height: 31px;
+     width: 95px;
+}
+ .screen .taskbar .main-section #start-menu-active:checked ~ .start-menu {
+	 display: block;
+}
+ .container {
+	 text-align: center;
+	 line-height: 90vh;
+}
+ .container .screen {
+	 overflow: hidden;
+	 display: inline-block;
+	 vertical-align: middle;
+	 text-align: left;
+	 line-height: normal;
+     width: 100%;
+     height: 100%;
+}
+ * {
+	 box-sizing: border-box;
+	 user-select: none;
+	 -webkit-user-select: none;
+	 cursor: default;
+}
+ html, body {
+	 margin: 0;
+	 width: 100%;
+	 height: 100%;
+	 font-family: verdana;
+            background-image: url(img/Vortec%20space.jpg);
+            background-position: center;
+            background-size: cover;
+}
+
+    </style>
+

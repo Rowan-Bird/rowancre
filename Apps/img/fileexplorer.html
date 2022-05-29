@@ -1,0 +1,275 @@
+<link
+  rel="stylesheet"
+  href="https://unpkg.com/xp.css"
+>
+
+
+
+<style>
+    html, body {width: 100%; height: 100%; margin: 0px;}
+    
+    .file-explorer {
+        height: calc(100% - 5px);
+        width: calc(100% - 2px);
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+    .file-tree {
+        width: 138px; /* subtract the border. */
+        height: calc(100% - 43px);
+        float: left;
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+    .file-browser {
+        width: calc(100% - 142px); /* subtract the border. */
+        float: left;
+        height: calc(100% - 43px);
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+    .address-bar {
+        
+    }
+    .address-bar input{
+        width: 100%;
+    }
+    
+    
+    /* Menu bar */
+    
+    /*-------------------------------------------*\ Menu \*-------------------------------------------*/
+ ul[role] {
+	 margin: 0;
+	 padding: 0;
+	 list-style: none;
+	 cursor: default;
+}
+ ul[role="menubar"] {
+	 display: flex;
+	 background: #f2f3f3;
+}
+ ul[role="menubar"] > [role="menuitem"] {
+	 position: relative;
+	 padding: 4px 10px;
+}
+ ul[role="menubar"] > [role="menuitem"]:focus, ul[role="menubar"] > [role="menuitem"]:focus-within, ul[role="menubar"] > [role="menuitem"]:hover {
+	 background: #316ac5;
+	 color: #fff;
+	 outline: none;
+}
+ ul[role="menu"] {
+	 position: relative;
+	 min-width: 150px;
+	 padding: 2px;
+	 background: var(--surface);
+	 color: initial;
+	 border: 1px solid rgba(0, 0, 0, 0.4);
+	 box-shadow: 4px 4px 3px -2px rgba(0, 0, 0, 0.5);
+}
+ ul[role="menu"]::before {
+	 content: "";
+	 pointer-events: none;
+	 position: absolute;
+	 left: 28px;
+	 width: 2px;
+	 height: calc(100% - 4px);
+	 box-shadow: inset 1px 0 rgba(0, 0, 0, 0.15), inset -1px 0 #fff;
+}
+ [role="menuitem"] ul[role="menu"] {
+	 display: none;
+	 position: absolute;
+	 left: 0;
+	 top: 100%;
+	 z-index: 99;
+     background-color: #fff;
+}
+ ul[role="menu"] [role="menuitem"] > [role="menu"] {
+	 top: -4px;
+	 left: 100%;
+}
+ ul[role="menu"] > [role="menuitem"] > a, ul[role="menu"] > [role="menuitem"] > button, ul[role="menu"] > [role="menuitem"][aria-haspopup="true"] {
+	 all: unset;
+	 position: relative;
+	 display: block;
+	 width: 100%;
+	 padding: 4px 10px 4px 32px;
+	 box-sizing: border-box;
+	 border: 1px solid transparent;
+}
+ ul[role="menu"] > [role="menuitem"] > a:hover, ul[role="menu"] > [role="menuitem"] > button:hover, ul[role="menu"] > [role="menuitem"][aria-haspopup="true"]:hover, ul[role="menu"] > [role="menuitem"] > a:focus, ul[role="menu"] > [role="menuitem"] > button:focus, ul[role="menu"] > [role="menuitem"][aria-haspopup="true"]:focus {
+	 background: #316ac5;
+     color: white;
+}
+ ul[role="menu"] > [role="menuitem"][aria-haspopup="true"]::after {
+	 content: "";
+	 position: absolute;
+	 top: 50%;
+	 right: 2px;
+	 transform: translateY(-50%);
+	 border: 4px solid transparent;
+	 border-left-color: currentColor;
+}
+ ul [role="menuitem"] {
+	 position: relative;
+}
+ ul [role="menuitem"]:focus > [role="menu"], ul [role="menuitem"]:focus-within > [role="menu"] {
+	 display: block;
+}
+ ul [role="menuitem"].has-divider::after {
+	 content: "";
+	 pointer-events: none;
+	 display: block;
+	 margin: 3px 0 2px;
+	 height: 2px;
+	 margin-left: 28px;
+	 box-shadow: inset 0 1px rgba(0, 0, 0, 0.15), inset 0 -1px #fff;
+}
+ ul [role="menuitem"] img {
+	 position: absolute;
+	 z-index: 1;
+	 left: 2px;
+	 top: 50%;
+	 transform: translateY(-50%);
+	 pointer-events: none;
+}
+ ul.can-hover [role="menuitem"]:hover > [role="menu"] {
+	 display: block;
+}
+ 
+</style>
+
+<div id="fileexplorer" class="file-explorer">
+
+    <ul role="menubar">
+  <li role="menuitem" tabindex="0" aria-haspopup="true">
+    File
+    <ul role="menu">
+      <li role="menuitem" tabindex="0" aria-haspopup="true">
+        New
+        <ul role="menu">
+        <!-- Use 'onclick' for handling MonsterFS (as I am calling it) functions -->
+        <!-- Submenus do not work without <button> -->
+          <li role="menuitem"><button>Folder</button></li>
+          <li role="menuitem"><button id="upload-file">Upload File...</button></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li role="menuitem" tabindex="0" aria-haspopup="true">
+    Help
+    <ul role="menu">
+      <li role="menuitem"><a href="#menu">View Help</a></li>
+      <li role="menuitem"><a href="#menu">About</a></li>
+    </ul>
+  </li>
+</ul>
+    
+    <div class="address-bar">
+        <input type="text" name="address" id="address" />
+    </div>
+    <div class="file-tree">
+        <ul class="tree-view">
+            <li>
+                My Computer
+                <ul id="my-computer">
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div class="file-browser">
+        browser
+    </div>
+    <input type="file" id="new-file" style="display: none;">
+</div>
+<script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+  crossorigin="anonymous"></script>
+
+        <!-- Thank you for helping me with the LocalStorage stuff -->
+<script>
+    var storageMonster = {
+        init: function () {
+            if (this.get("drives") == null){
+                var drives = [];
+                drives.push({ label: "Home Drive", letter: "c", files: {} });
+                this.set("drives", drives);
+            }
+            this.set("c:/text.txt", { fileName: "text.txt", data: "This is a text file", mimeType: "text/plain" });
+        },   
+        set: function (key, obj){
+            try {
+                var stringObj = JSON.stringify(obj);
+                localStorage.setItem(key, stringObj);
+            }
+            catch (e){
+                console.error("Failed to set object for key " + key);
+            }
+        },
+        get: function (key) {
+            try {
+                var stringObj = localStorage.getItem(key);
+                return JSON.parse(stringObj);
+            }
+            catch (e){
+                console.error("Failed to get object for key " + key);
+            }
+        },
+        list: function () {
+            return Object.keys(localStorage);
+        }
+    };
+    var fileExplorer = {
+        drives: null,
+        init: function (){
+            var drives = storageMonster.get("drives"),
+                $myComputer = $("#my-computer");
+            this.drives = drives;
+            for (i = 0; i < drives.length; i++){
+                var drive = drives[i];
+                $myComputer.append("<li><span class='drive' data-letter='" + drive.letter + "'>(" + drive.letter + ":)</span></li>");
+            }
+        }
+    }
+    storageMonster.init();
+    fileExplorer.init();
+    
+    $(function () {
+        var $address = $("#address"),
+            $newFile = $("#new-file");
+       $("body").on("click", ".drive", function (e) {
+           var $this = $(this),
+               letter = $this.data("letter"),
+               drive = fileExplorer.drives.filter(drive => drive.letter == letter);
+           if (drive){
+               $address.val(drive[0].letter + "\\");
+           }
+           else {
+               $address.val("");
+           }           
+       }).on("click", "#upload-file", function (e) {
+           // this should actually be split by the \ and etc. but for now we're just doing root.
+           var address = $address.val();
+           if (address.length) {
+               var drive = fileExplorer.drives.filter(drive => drive.letter == address.substring(0, 1));
+               $newFile.trigger("click");
+           }
+       }).on("change", "#new-file", function (e) {
+           var $this = $(this);
+           if (this.files.length) {
+               var file = this.files[0];
+               var fileReader = new FileReader();
+               fileReader.onload = () => {
+                   var address = $address.val();
+                    if (address.length) {
+                        var drive = fileExplorer.drives.filter(drive => drive.letter == address.substring(0, 1));                   
+                        drive.files[file.name] = { name: file.name, size: file.size, data: fileReader.result };
+                        storageMonster.set("drives", fileExplorer.drives);
+                    }                   
+                };
+               fileReader.readAsText(file);
+           }
+       });
+    });
+</script>
