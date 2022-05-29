@@ -1,6 +1,6 @@
 function calc() {
             var node = document.getElementById("error");
-            var audio = new Audio('/Media/Windows XP Critical Stop.wav');
+            var audio = new Audio('Media/Windows XP Critical Stop.wav');
             audio.play();
             new WinBox({
                 title: "Error",
