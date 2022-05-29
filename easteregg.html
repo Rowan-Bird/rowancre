@@ -1,250 +1,176 @@
 <script src="https://cdn.jsdelivr.net/npm/less@4" ></script>
 <style>
-@import "compass/css3";
- body {
-	 background: #111;
-	 color: white;
-	 padding-top: 20px;
-	 padding-left: 20px;
+body {
+  background: #111;
+  color: white;
+  padding-top: 20px;
+  padding-left: 20px;
 }
- #switch {
-	 display: none;
+
+.crt::after {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(18, 16, 16, 0.1);
+  opacity: 0;
+  z-index: 2;
+  pointer-events: none;
+  animation: flicker 0.15s infinite;
 }
- .switch-label {
-	 display: inline-block;
-	 cursor: pointer;
-	 background: #fff;
-	 color: #111;
-	 padding: 10px;
-	 padding-left: 15px;
-	 padding-right: 15px;
-	 border-radius: 5px;
-	 margin-top: 10px;
-	 box-shadow: 0 2px #666;
+.crt::before {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+  z-index: 2;
+  background-size: 100% 2px, 3px 100%;
+  pointer-events: none;
 }
- .switch-label::after {
-	 content: "on";
+iframe {
+  animation: on 0.5s;
+    animation: glitch 3s linear infinite;
 }
- .switch-label::before {
-	 content: " ";
-	 display: inline-block;
-	 border-radius: 100%;
-	 width: 10px;
-	 height: 10px;
-	 background: #003321;
-	 margin-right: 10px;
-	 border: 1px solid #111;
+
+@keyframes flicker {
+  0% {
+    opacity: 0.20637;
+  }
+  5% {
+    opacity: 0.54678;
+  }
+  10% {
+    opacity: 0.98314;
+  }
+  15% {
+    opacity: 0.9103;
+  }
+  20% {
+    opacity: 0.66523;
+  }
+  25% {
+    opacity: 0.98079;
+  }
+  30% {
+    opacity: 0.76129;
+  }
+  35% {
+    opacity: 0.11882;
+  }
+  40% {
+    opacity: 0.41832;
+  }
+  45% {
+    opacity: 0.79238;
+  }
+  50% {
+    opacity: 0.01054;
+  }
+  55% {
+    opacity: 0.38548;
+  }
+  60% {
+    opacity: 0.07903;
+  }
+  65% {
+    opacity: 0.12325;
+  }
+  70% {
+    opacity: 0.89615;
+  }
+  75% {
+    opacity: 0.3374;
+  }
+  80% {
+    opacity: 0.98487;
+  }
+  85% {
+    opacity: 0.32846;
+  }
+  90% {
+    opacity: 0.78562;
+  }
+  95% {
+    opacity: 0.73206;
+  }
+  100% {
+    opacity: 0.46644;
+  }
 }
- .switch-label:active {
-	 box-shadow: none;
-	 transform: translate3d(0, 2px, 0);
+.container {
+  background: #121010;
+  width: 1024px;
+  height: 768px;
+  margin-top: 10px;
+  position: relative;
+  overflow: hidden;
+  border: 2px solid #666;
 }
- #switch:checked + .switch-label::before {
-	 background: #2f5;
+.container::after {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(18, 16, 16, 0.1);
+  opacity: 0;
+  z-index: 2;
+  pointer-events: none;
+  animation: flicker 0.15s infinite;
 }
- #switch:checked + .switch-label::after {
-	 content: "off";
+.container::before {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+  z-index: 2;
+  background-size: 100% 2px, 3px 100%;
+  pointer-events: none;
 }
- @keyframes flicker {
+
+ @keyframes on {
 	 0% {
-		 opacity: 1333843441;
-	}
-	 5% {
-		 opacity: 712440296;
-	}
-	 10% {
-		 opacity: 1223342259;
-	}
-	 15% {
-		 opacity: 794802485;
-	}
-	 20% {
-		 opacity: 621787973;
-	}
-	 25% {
-		 opacity: 1844480143;
-	}
-	 30% {
-		 opacity: 2064309419;
-	}
-	 35% {
-		 opacity: 1454409696;
-	}
-	 40% {
-		 opacity: 2048993869;
-	}
-	 45% {
-		 opacity: 537547802;
-	}
-	 50% {
-		 opacity: 920233903;
-	}
-	 55% {
-		 opacity: 1583287208;
-	}
-	 60% {
-		 opacity: 1739793001;
-	}
-	 65% {
-		 opacity: 1117397755;
-	}
-	 70% {
-		 opacity: 2052063556;
-	}
-	 75% {
-		 opacity: 1250738709;
-	}
-	 80% {
-		 opacity: 472710590;
-	}
-	 85% {
-		 opacity: 793672339;
-	}
-	 90% {
-		 opacity: 355024185;
-	}
-	 95% {
-		 opacity: 1867193697;
-	}
-	 100% {
-		 opacity: 852444056;
-	}
-}
- .container {
-	 background: #121010;
-	 width: 800px;
-	 height: 600px;
-	 margin-top: 10px;
-	 position: relative;
-	 overflow: hidden;
-	 border: 2px solid #666;
-}
- .container::after {
-	 content: " ";
-	 display: block;
-	 position: absolute;
-	 top: 0;
-	 left: 0;
-	 bottom: 0;
-	 right: 0;
-	 background: rgba(18, 16, 16, 0.1);
-	 opacity: 0;
-	 z-index: 2;
-	 pointer-events: none;
-}
- .container::before {
-	 content: " ";
-	 display: block;
-	 position: absolute;
-	 top: 0;
-	 left: 0;
-	 bottom: 0;
-	 right: 0;
-	 background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
-	 z-index: 2;
-	 background-size: 100% 2px, 3px 100%;
-	 pointer-events: none;
-}
- #switch:checked ~ .container::after {
-	 animation: flicker 0.3s infinite;
-}
- @keyframes turn-on {
-	 0% {
-		 transform: scale(1, 0.8) translate3d(0, 0, 0);
-		 -webkit-filter: brightness(30);
-		 filter: brightness(30);
+		 transform: scale(0.86, 0.99) translate3d(0, 0, 0);
+		 filter: brightness(1);
 		 opacity: 1;
 	}
-	 3.5% {
-		 transform: scale(1, 0.8) translate3d(0, 100%, 0);
-	}
-	 3.6% {
-		 transform: scale(1, 0.8) translate3d(0, -100%, 0);
-		 opacity: 1;
-	}
-	 9% {
-		 transform: scale(1.3, 0.6) translate3d(0, 100%, 0);
-		 -webkit-filter: brightness(30);
-		 filter: brightness(30);
-		 opacity: 0;
-	}
-	 11% {
-		 transform: scale(1, 1) translate3d(0, 0, 0);
-		 -webkit-filter: contrast(0) brightness(0);
-		 filter: contrast(0) brightness(0);
-		 opacity: 0;
-	}
+
 	 100% {
 		 transform: scale(1, 1) translate3d(0, 0, 0);
-		 -webkit-filter: contrast(1) brightness(1.2) saturate(1.3);
 		 filter: contrast(1) brightness(1.2) saturate(1.3);
 		 opacity: 1;
 	}
 }
- @keyframes turn-off {
-	 0% {
-		 transform: scale(1, 1.3) translate3d(0, 0, 0);
-		 -webkit-filter: brightness(1);
-		 filter: brightness(1);
-		 opacity: 1;
-	}
-	 60% {
-		 transform: scale(1.3, 0.001) translate3d(0, 0, 0);
-		 -webkit-filter: brightness(10);
-		 filter: brightness(10);
-	}
-	 100% {
-		 animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
-		 transform: scale(0, 0.0001) translate3d(0, 0, 0);
-		 -webkit-filter: brightness(50);
-		 filter: brightness(50);
-	}
+
+@keyframes glitch{
+  2%,64%{
+    transform: translate(2px,0) skew(0deg);
+  }
+  4%,60%{
+    transform: translate(-2px,0) skew(0deg);
+  }
+  62%{
+    transform: translate(0,0) skew(2deg); 
+  }
 }
- .screen {
-	 width: 100%;
-	 height: 100%;
-	 border: none;
-}
- #switch ~ .container > .screen {
-	 animation: turn-off 0.55s cubic-bezier(0.23, 1, 0.32, 1);
-	 animation-fill-mode: forwards;
-}
- #switch:checked ~ .container > .screen {
-	 animation: turn-on 4s linear;
-	 animation-fill-mode: forwards;
-}
- @keyframes overlay-anim {
-	 0% {
-		 visibility: hidden;
-	}
-	 20% {
-		 visibility: hidden;
-	}
-	 21% {
-		 visibility: visible;
-	}
-	 100% {
-		 visibility: hidden;
-	}
-}
- .overlay {
-	 color: #0f0;
-	 position: absolute;
-	 top: 20px;
-	 left: 20px;
-	 font-size: 60px;
-	 visibility: hidden;
-	 pointer-events: none;
-}
- #switch:checked ~ .container .overlay {
-	 animation: overlay-anim 5s linear;
-	 animation-fill-mode: forwards;
-}
- 
+    
 </style>
 
 <html>
-<div style="margin: auto;" class="container">
+<div style="margin: auto;" class="container crt">
   <iframe src="index.html" class="screen" width="1024" height="768">
  </iframe>
   <div class="overlay">AV-1</div>
