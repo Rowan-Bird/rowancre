@@ -1,0 +1,16 @@
+<span>Address</span>
+<input style="width: calc(100% - 130px)" type="text" placeholder="Enter URL">
+<button>Go</button>
+<iframe src="https://rowan-bird.github.io/rowancre/" style="width: calc(100% - 3px); height: calc(100% - 29px);"></iframe>
+
+
+<script>
+let input = document.querySelector("input");
+let btn = document.querySelector("button");
+let iframe = document.querySelector("iframe");
+
+btn.onclick = function () {
+    iframe.src = input.value;
+};
+
+</script>
