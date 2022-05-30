@@ -48,14 +48,64 @@
     
     <style>
 
+
+
+ :root {
+	/* Color */
+	 --surface: #c0c0c0;
+	 --button-highlight: #fff;
+	 --button-face: #dfdfdf;
+	 --button-shadow: #808080;
+	 --window-frame: #0a0a0a;
+	 --dialog-blue: #000080;
+	 --dialog-blue-light: #1084d0;
+	 --dialog-gray: #808080;
+	 --dialog-gray-light: #b5b5b5;
+	 --link-blue: #00f;
+	/* Spacing */
+	 --element-spacing: 8px;
+	 --grouped-button-spacing: 4px;
+	 --grouped-element-spacing: 6px;
+	 --radio-width: 12px;
+	 --checkbox-width: 13px;
+	 --radio-label-spacing: 6px;
+	 --range-track-height: 4px;
+	 --range-spacing: 10px;
+	/* Some detailed computations for radio buttons and checkboxes */
+	 --radio-total-width-precalc: var(--radio-width)var(--radio-label-spacing);
+	 --radio-total-width: calc(var(--radio-total-width-precalc));
+	 --radio-left: calc(-1 * var(--radio-total-width-precalc));
+	 --radio-dot-width: 4px;
+	 --radio-dot-top: calc(var(--radio-width) / 2 - var(--radio-dot-width) / 2);
+	 --radio-dot-left: calc(-1 * (var(--radio-total-width-precalc)) + var(--radio-width) / 2 - var( --radio-dot-width ) / 2);
+	 --checkbox-total-width-precalc: var(--checkbox-width)var(--radio-label-spacing);
+	 --checkbox-total-width: calc(var(--checkbox-total-width-precalc));
+	 --checkbox-left: calc(-1 * var(--checkbox-total-width-precalc));
+	 --checkmark-width: 7px;
+	 --checkmark-top: 3px;
+	 --checkmark-left: 3px;
+	/* Borders */
+	 --border-width: 1px;
+	 --border-raised-outer: inset -1px -1px var(--window-frame), inset 1px 1px var(--button-highlight);
+	 --border-raised-inner: inset -2px -2px var(--button-shadow), inset 2px 2px var(--button-face);
+	 --border-sunken-outer: inset -1px -1px var(--button-highlight), inset 1px 1px var(--window-frame);
+	 --border-sunken-inner: inset -2px -2px var(--button-face), inset 2px 2px var(--button-shadow);
+	/* Window borders flip button-face and button-highlight */
+	 --border-window-outer: inset -1px -1px var(--window-frame), inset 1px 1px var(--button-face);
+	 --border-window-inner: inset -2px -2px var(--button-shadow), inset 2px 2px var(--button-highlight);
+	/* Field borders (checkbox, input, etc) flip window-frame and button-shadow */
+	 --border-field: inset -1px -1px var(--button-highlight), inset 1px 1px var(--button-shadow), inset -2px -2px var(--button-face), inset 2px 2px var(--window-frame);
+}
+
+
 #welcome {
     z-index: 10000000;
 }
         
         html {
+            font-family: "Pixelated MS Sans Serif";
             margin: 0px;
             background-color: #3A6EA5;
-            background-image: url(img/Vortec%20space.jpg);
         }
         
         .body {
@@ -131,13 +181,7 @@ html, body {margin: 0; height: 100%; overflow: hidden}
         }
 
         
-        .wb-body {
-            /* the width of window frame border: */
-            margin: 4px;
-            color: #fff;
-            background: #131820;
-        }
-        
+
         
         
         
@@ -162,55 +206,47 @@ body{
             padding: 0px;
             margin: 0px;
     font-family: "Trebuchet MS";
-    background: linear-gradient(180deg,#0997ff,#0053ee 8%,#0050ee 40%,#06f 88%,#06f 93%,#005bff 95%,#003dd7 96%,#003dd7 35px);
-    background-color: #003dd7;
+    background: linear-gradient(90deg,#0a246a 0%,#a3c6ed 100%);
     background-repeat: no-repeat;
     background-size: auto 35px;
-    padding:3px 5px 3px 3px;
-    border-top:1px solid #0831d9;
-    border-left:1px solid #0831d9;
-    border-right:1px solid #001ea0;
-    border-top-left-radius:8px;
-    border-top-right-radius:7px;
+    padding:0px 5px 2px 2px;
     font-size:13px;
-    height: 21px;
-    border-top: 1px solid #0831d9;
-    border-left: 1px solid #0831d9;
-    border-right: 1px solid #001ea0;
-    border-top-left-radius: 8px;
-    border-top-right-radius: 7px;
+    
+    height: 20px;
     font-size: 11px;
-    height: 21px;
-    box-shadow: inset -1px -1px #00138c, inset 1px 1px #0831d9, inset -2px -2px #001ea0, inset 2px 2px #166aee;
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
-    padding: 0 0 3px 0;
+	 padding: 2px;
+    box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #dfdfdf;
+box-shadow: inset -2px -2px #808080, inset 2px 2px #fff;
+    border-width: 2px;
+    padding: 0 0 2px 0;
+    height: 12px;
 }
 
         .wb-body {
             background-color: rgb(212, 208, 200);
             color: black;
     text-shadow: 0x 0px #0f1089;
-        border-width: 
+            margin: 2px;
         }
         
 .wb-close {
-    background-image: url(img/gui/icon/close.svg);
+    background-image:  url(img/gui/icon/icon/close.svg), url(img/gui/icon/icon/button-down.svg);
+    background-size: 12px, 24px; 
     background-position: center;
-    background-size: 24px auto;
     margin-right: 3px;
     margin-left: -3px;
+    margin-top: 1px;
 }
 .wb-max {
-    background-image: url(img/gui/icon/maximize.svg);
+    background-image: url(img/gui/icon/icon/maximize.svg), url(img/gui/icon/icon/button-down.svg);
+    background-size: 12px, 24px; 
     background-position: center;
-    background-size: 24px auto;
     margin-left: -3px;
 }
 .wb-min{
-    background-image: url(img/gui/icon/minimize.svg);
+    background-image: url(img/gui/icon/icon/minimize.svg), url(img/gui/icon/icon/button-down.svg);
+    background-size: 12px, 24px; 
     background-position: center;
-    background-size: 24px auto;
     margin-left: -3px;
 }
 
@@ -221,55 +257,25 @@ body{
         }    
 
 .winbox:not(.focus) {
-                padding: 0px;
+            padding: 0px;
             margin: 0px;
     font-family: "Trebuchet MS";
-    background: linear-gradient(180deg,#98d1fa,#8dadeb 8%,#8baae8 40%,#97c0fc 88%,#97c0fc 93%,#96bcff 95%,#7b94d1 96%,#7a92cf 35px);
-        background-color: #98d1fa;
+    background: linear-gradient(90deg,#808080 0%,#b5b5b5 100%);
     background-repeat: no-repeat;
     background-size: auto 35px;
-    padding:3px 5px 3px 3px;
-    border-top:1px solid #98d1fa;
-    border-left:1px solid #98d1fa;
-    border-right:1px solid #6c92ad;
-    border-top-left-radius:8px;
-    border-top-right-radius:7px;
+    padding:2px 5px 2px 2px;
     font-size:13px;
     height: 21px;
-    border-top:1px solid #98d1fa;
-    border-left:1px solid #98d1fa;
-    border-right:1px solid #6c92ad;
-    border-top-left-radius: 8px;
-    border-top-right-radius: 7px;
     font-size: 11px;
+	 padding: 2px;
     height: 21px;
-    box-shadow: inset -1px -1px #6c92ad, inset 1px 1px #98d1fa, inset -2px -2px #6c92ad, inset 2px 2px #6c92ad;
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
-    padding: 0 0 3px 0;
+    box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #dfdfdf;
+box-shadow: inset -2px -2px #808080, inset 2px 2px #fff;
+    border-width: 2px;
+    padding: 0 0 2px 0;
 }
 
-.winbox:not(.focus) .wb-close {
-    background-image: url(img/gui/icon/close-nofocus.svg);
-    background-position: center;
-    background-size: 24px auto;
-    margin-right: 3px;
-    margin-left: -3px;
-}
 
-.winbox:not(.focus) .wb-max {
-    background-image: url(img/gui/icon/maximize-nofocus.svg);
-    background-position: center;
-    background-size: 24px auto;
-    margin-left: -3px;
-}
-
-.winbox:not(.focus) .wb-min {
-    background-image: url(img/gui/icon/minimize-nofocus.svg);
-    background-position: center;
-    background-size: 24px auto;
-    margin-left: -3px;
-}
 
 .hide {display: none;}
 
@@ -279,19 +285,24 @@ body{
 	 bottom: 0;
 	 left: 0;
 	 width: 100%;
+     height: 31px;
 }
+/*Just remember*/
  .screen .taskbar .main-section {
 	 height: 100%;
-	 background: linear-gradient(to bottom, #245edb 0%, #3f8cf3 9%, #245edb 18%, #245edb 92%, #333 100%) center/cover no-repeat;
+	 background-color: #d4d0c8;
+         box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #dfdfdf;
+box-shadow: inset -2px -2px #808080, inset 2px 2px #fff;
 }
  .screen .taskbar .main-section .start-button {
 	 position: relative;
 	 display: inline-block;
 	 font-size: 18px;
-	 background: url('img/standard.png');
-	 left: -20px;
-     height: 31px;
-     width: 95px;
+	 background: url('img/standardClassic.png');
+	 left: -16px;
+     height: 22px;
+     width: 62px;
+     margin-top: 4px;
 }
  .screen .taskbar .main-section .start-button::before {
 	 content: '';
@@ -306,31 +317,31 @@ body{
  .screen .taskbar .main-section .start-menu {
 	 display: none;
 	 position: absolute;
-	 background-color: #0c8dea;
+     background-color: #d4d0c8;
 	 width: 380px;
 	 height: 550px;
 	 left: 0%;
 	 bottom: 100%;
-	 z-index: -50;
-	 border-radius: 5px 5px 0px 0px;
-	 box-shadow: 2px 6px 10px #333, -2px 0px 5px rgba(20, 20, 20, 0.6) inset, 2px 0px 3px #7fbce8 inset;
+	 z-index: -50;             
+     box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #dfdfdf;
+box-shadow: inset -2px -2px #808080, inset 2px 2px #fff;
 	 overflow: hidden;
 }
+/* remember */
  .screen .taskbar .main-section .start-menu .start-menu-header {
 	 display: flex;
 	 align-items: center;
 	 height: 65px;
-	 box-shadow: 3px 2px 3px #7fbce8 inset;
-	 background: linear-gradient(to bottom, #245edb 0%, #0c8dea 100%);
+	              box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #dfdfdf;
+box-shadow: inset -2px -2px #808080, inset 2px 2px #fff;
+	 background: linear-gradient(90deg,#0a246a 0%,#a3c6ed 100%);
 	 padding: 8px 0px 7px 8px;
+              box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #dfdfdf;
+box-shadow: inset -2px -2px #808080, inset 2px 2px #fff;
+     font-style: italic;
 }
  .screen .taskbar .main-section .start-menu .start-menu-header .account-image-wrapper {
-	 background-color: white;
-	 border-radius: 5px;
-	 padding: 2px;
-	 height: 52px;
-	 display: inline-block;
-	 box-shadow: 2px 2px 4px #333;
+display: none;
 }
  .screen .taskbar .main-section .start-menu .start-menu-header .account-name {
 	 display: inline-block;
@@ -346,7 +357,9 @@ body{
 	 display: flex;
 	 height: calc(100% - 65px - 43px);
 	 background-color: white;
-	 border: 1px solid #0c8dea;
+	 border: 1px solid #0a0a0a;
+                   box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #dfdfdf;
+box-shadow: inset -2px -2px #808080, inset 2px 2px #fff;
 	 margin: 0 1px;
 	 overflow: hidden;
 }
@@ -354,7 +367,7 @@ body{
 	 content: '';
 	 position: absolute;
 	 border-radius: 50%;
-	 box-shadow: 0px 4px 5px #e88f0b;
+	 box-shadow: 0px 4px 5px;
 	 z-index: 10;
 }
  .screen .taskbar .main-section .start-menu .start-menu-body .start-menu-item {
@@ -399,6 +412,7 @@ body{
 	 position: relative;
 	 display: inline-flex;
 	 flex-direction: column;
+     background-color: #d4d0c8;
 	 height: 100%;
 	 width: 50%;
 	 padding: 8px;
@@ -450,9 +464,9 @@ body{
 	 display: inline-flex;
 	 flex-direction: column;
 	 height: 100%;
+     background-color: #d4d0c8;
 	 width: 50%;
 	 padding: 8px;
-	 background: #d3e5fa;
 	 border-left: 1px solid #95bdee;
 }
  .screen .taskbar .main-section .start-menu .start-menu-body .start-menu-shortcuts .start-menu-item .icon {
@@ -477,8 +491,9 @@ body{
 }
  .screen .taskbar .main-section .start-menu .start-menu-footer {
 	 height: 43px;
-	 background: linear-gradient(to top, #245edb 0%, #0c8dea 100%);
-	 box-shadow: -2px -2px 5px rgba(20, 20, 20, 0.6) inset;
+                   box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #dfdfdf;
+box-shadow: inset -2px -2px #808080, inset 2px 2px #fff;
+     background-color: #d4d0c8;
 }
  .screen .taskbar .main-section #start-menu-active {
 	 display: none;
@@ -488,9 +503,11 @@ body{
 		 position: relative;
 	 display: inline-block;
 	 font-size: 18px;
-	 background: url('img/pressed.png');
-     height: 31px;
-     width: 95px;
+	 background: url('img/pressedClassic.png');
+	 left: -16px;
+     height: 22px;
+     width: 62px;
+     margin-top: 4px;
 }
  .screen .taskbar .main-section #start-menu-active:checked ~ .start-menu {
 	 display: block;
@@ -519,11 +536,43 @@ body{
 	 width: 100%;
 	 height: 100%;
 	 font-family: verdana;
-            background-image: url(img/Vortec%20space.jpg);
             background-position: center;
             background-size: cover;
 }
 
-#datetime {background: linear-gradient(rgb(12, 89, 185) 1%, rgb(19, 158, 233) 6%, rgb(24, 181, 242) 10%, rgb(19, 155, 235) 14%, rgb(18, 144, 232) 19%, rgb(13, 141, 234) 63%, rgb(13, 159, 241) 81%, rgb(15, 158, 237) 88%, rgb(17, 155, 233) 91%, rgb(19, 146, 226) 94%, rgb(19, 126, 215) 97%, rgb(9, 91, 201) 100%); border: 1px solid rgb(16, 66, 175); color: white; z-index: 100098; font-size: 12px; position: absolute; bottom: 0; right: 0; height: 32px; text-align: center; width: 100px; line-height: 32px;}
+ .title-bar-controls button[aria-label="Minimize"] {
+	 background-image: svg-load("./icon/minimize.svg");
+	 background-repeat: no-repeat;
+	 background-position: bottom 3px left 4px;
+}
+ .title-bar-controls button[aria-label="Maximize"] {
+	 background-image: svg-load("./icon/maximize.svg");
+	 background-repeat: no-repeat;
+	 background-position: top 2px left 3px;
+}
+ .title-bar-controls button[aria-label="Restore"] {
+	 background-image: svg-load("./icon/restore.svg");
+	 background-repeat: no-repeat;
+	 background-position: top 2px left 3px;
+}
+ .title-bar-controls button[aria-label="Help"] {
+	 background-image: svg-load("./icon/help.svg");
+	 background-repeat: no-repeat;
+	 background-position: top 2px left 5px;
+}
+ .title-bar-controls button[aria-label="Close"] {
+	 margin-left: 2px;
+	 background-image: svg-load("./icon/close.svg");
+	 background-repeat: no-repeat;
+	 background-position: top 3px left 4px;
+}
+
+#datetime {
+    box-shadow: inset -2px -2px #dfdfdf, inset 2px 2px #808080;
+box-shadow: inset -1px -1px #ffffff, inset 1px 1px #0a0a0a;
+     background-color: #d4d0c8;
+    color: black; z-index: 100098; font-size: 12px; position: absolute; bottom: 4; right: 4; height: 24px; text-align: center; width: 100px; line-height: 24px;
+}
+
     </style>
 

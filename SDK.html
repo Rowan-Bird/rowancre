@@ -1,8 +1,55 @@
 
+
+<div id="everythingtoman">
+<script type="module" src="js.cookie.mjs"></script>
+<script type="module">
+  import Cookies from 'js.cookie.min.mjs'
+</script>
+<div id="stuff">
+  <link rel='stylesheet' href='https://unpkg.com/xp.css'><link rel='stylesheet' href='SDK.css'>  
+    </div>    
+    
+    <div id="contextMenu" class="context-menu" style="display: none">
+        <ul role="menu" class="can-hover" style="width: 200px">
+  <li role="menuitem" tabindex="0" aria-haspopup="true">View</li>
+  <li role="menuitem" tabindex="0" aria-haspopup="true">
+    Sort by
+    <ul role="menu">
+      <li role="menuitem"><a href="#menu">Name</a></li>
+      <li role="menuitem"><a href="#menu">Size</a></li>
+      <li role="menuitem"><a href="#menu">Item type</a></li>
+      <li role="menuitem"><a href="#menu">Date modified</a></li>
+    </ul>
+  </li>
+  <li role="menuitem" class="has-divider"><a href="#menu">Refresh</a></li>
+  <li role="menuitem"><a href="#menu">Paste</a></li>
+  <li role="menuitem" class="has-divider"><a href="#menu">Paste shortcut</a></li>
+  <li role="menuitem">
+    <img src="https://img.icons8.com/color/18/000000/monitor--v1.png">
+    <a href="#menu">Screen resolution</a>
+  </li>
+  <li role="menuitem">
+    <img src="https://img.icons8.com/color/18/000000/virtual-machine2.png">
+    <a href="#menu">Gadgets</a>
+  </li>
+  <li role="menuitem">
+    <img src="https://img.icons8.com/color/18/000000/remote-desktop.png">
+    <a href="#menu">Personalize</a>
+  </li>
+</ul>
+    </div>
+    
 <link rel="icon" type="image/png" href="img/explorer_110.ico">
 <title>Windows 2004</title>
 <script src="SDK.js"></script>
-
+<div id="app"></div>
+<script src="https://unpkg.com/webamp"></script>
+<script>
+    const app = document.getElementById("app")
+    const webamp = new Webamp();
+    webamp.renderWhenReady(app);
+    webamp.close()
+</script>
     
 <div id="welcome">
     
@@ -10,6 +57,12 @@
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <style>
     
+        #contextMenu {
+            position: absolute;
+        }
+        
+
+        
         .screen {
             opacity: 0;
         }
@@ -86,7 +139,8 @@ transition: opacity 1s ease-out;
           </center>
   </div>
     
-   
+
+        
 <script>
 function remove(){
 var element = document.getElementById("welcome");
@@ -94,23 +148,26 @@ var audio = new Audio('Media/Windows XP Startup.wav');
 audio.play();
 $("#welcome").fadeOut( 300 ).delay( 800 ).fadeOut( 400 );
 jQuery('.screen').css('opacity', '100');
-}
+crashf();    
+};
+    </script>
+    <script>    
+window.onload = function() {
+  crashf();
+};
 </script>
 
 </div>
-<link rel="stylesheet" href="SDK.css">
-<link
-  rel="stylesheet"
-  href="https://unpkg.com/xp.css"
->   
     <script src="winbox.bundle.js"></script>
        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 
 <!-- import contents of apps -->
+<div data-include="Apps/img/webpack/index.html"></div>
 <div class="hide">
 <div data-include="Apps/version.html"></div>
 <div data-include="Apps/img/Icedog96.html"></div>
 <div data-include="Apps/img/dserror.html"></div>
+<div data-include="Apps/img/settings.html"></div>
 <div data-include="Apps/calc/index.html"></div>
 <div>
 <style>
@@ -147,14 +204,20 @@ jQuery('.screen').css('opacity', '100');
     /* Menu bar */
     
     /*-------------------------------------------*\ Menu \*-------------------------------------------*/
- ul[role] {
+    .can-hover {
+        background-color: white;
+    }
+    
+    ul[role] {
 	 margin: 0;
 	 padding: 0;
+        background-color: white;
 	 list-style: none;
 	 cursor: default;
 }
  ul[role="menubar"] {
 	 display: flex;
+        background-color: white;
 	 background: #f2f3f3;
 }
  ul[role="menubar"] > [role="menuitem"] {
@@ -170,6 +233,7 @@ jQuery('.screen').css('opacity', '100');
 	 position: relative;
 	 min-width: 150px;
 	 padding: 2px;
+        background-color: white;
 	 background: var(--surface);
 	 color: initial;
 	 border: 1px solid rgba(0, 0, 0, 0.4);
@@ -180,6 +244,7 @@ jQuery('.screen').css('opacity', '100');
 	 pointer-events: none;
 	 position: absolute;
 	 left: 28px;
+        background-color: white;
 	 width: 2px;
 	 height: calc(100% - 4px);
 	 box-shadow: inset 1px 0 rgba(0, 0, 0, 0.15), inset -1px 0 #fff;
@@ -189,12 +254,14 @@ jQuery('.screen').css('opacity', '100');
 	 position: absolute;
 	 left: 0;
 	 top: 100%;
+        background-color: white;
 	 z-index: 99;
      background-color: #fff;
 }
  ul[role="menu"] [role="menuitem"] > [role="menu"] {
 	 top: -4px;
 	 left: 100%;
+     background-color: #fff;
 }
  ul[role="menu"] > [role="menuitem"] > a, ul[role="menu"] > [role="menuitem"] > button, ul[role="menu"] > [role="menuitem"][aria-haspopup="true"] {
 	 all: unset;
@@ -203,7 +270,8 @@ jQuery('.screen').css('opacity', '100');
 	 width: 100%;
 	 padding: 4px 10px 4px 32px;
 	 box-sizing: border-box;
-	 border: 1px solid transparent;
+	 border: 1px solid white;
+     background-color: #fff;
 }
  ul[role="menu"] > [role="menuitem"] > a:hover, ul[role="menu"] > [role="menuitem"] > button:hover, ul[role="menu"] > [role="menuitem"][aria-haspopup="true"]:hover, ul[role="menu"] > [role="menuitem"] > a:focus, ul[role="menu"] > [role="menuitem"] > button:focus, ul[role="menu"] > [role="menuitem"][aria-haspopup="true"]:focus {
 	 background: #316ac5;
@@ -223,11 +291,13 @@ jQuery('.screen').css('opacity', '100');
 }
  ul [role="menuitem"]:focus > [role="menu"], ul [role="menuitem"]:focus-within > [role="menu"] {
 	 display: block;
+     background-color: #fff;
 }
  ul [role="menuitem"].has-divider::after {
 	 content: "";
 	 pointer-events: none;
 	 display: block;
+     background-color: #000;
 	 margin: 3px 0 2px;
 	 height: 2px;
 	 margin-left: 28px;
@@ -243,6 +313,7 @@ jQuery('.screen').css('opacity', '100');
 }
  ul.can-hover [role="menuitem"]:hover > [role="menu"] {
 	 display: block;
+     background-color: #fff;
 }
  
 </style>
@@ -429,23 +500,24 @@ jQuery('.screen').css('opacity', '100');
 <script src="Apps/winver.app"></script>
 <script src="Apps/icedog.app"></script>
 <script src="Apps/calc.app"></script>
+<script src="Apps/ctrlpanel.app"></script>
 <script src="Apps/FSBrowse.app"></script>
 
 <!-- End of applib -->
 
-<link
-  rel="stylesheet"
-  href="https://unpkg.com/xp.css"
->
+
 
 <!-- 
   NOTE: For best results, use Full Page View 
 -->
 
+
+
 <head>
 <div class="buildstring">
-<span style="font-family: Tahoma,Verdana,Segoe,sans-serif;  color: white; position: fixed; bottom: 35px; right: 0px;  text-align: right;">Windows XP 2004 Edition Professional (Plus!)<br>For evaluation purposes only. Build 3010-final.rw.000020-1010</span>
+<span style="font-family: Tahoma,Verdana,Segoe,sans-serif;  color: white; position: fixed; bottom: 35px; right: 0px;  text-align: right;">Windows XP 2004 Edition Professional (Plus!)<br>For evaluation purposes only. Build 3015.rw.000020-1010</span>
     
+
 
     
 </div>
@@ -454,13 +526,14 @@ jQuery('.screen').css('opacity', '100');
 <div class="container">
   <div class="screen">
       
-          <main id="datetime" style="color: white; z-index: 100098; font-size: 12px; position: absolute; bottom: 0; right: 0; height: 32px; background: linear-gradient(rgb(12, 89, 185) 1%, rgb(19, 158, 233) 6%, rgb(24, 181, 242) 10%, rgb(19, 155, 235) 14%, rgb(18, 144, 232) 19%, rgb(13, 141, 234) 63%, rgb(13, 159, 241) 81%, rgb(15, 158, 237) 88%, rgb(17, 155, 233) 91%, rgb(19, 146, 226) 94%, rgb(19, 126, 215) 97%, rgb(9, 91, 201) 100%); border: 1px solid rgb(16, 66, 175); text-align: center; width: 100px; line-height: 32px;">9:54:06 AM</main>
-    <div class="background" style="height: 100%; z-index: 10;"></div>
+          <main id="datetime">9:54:06 AM</main>
+    <div class="background" style="height: 100%; z-index: 10000000000000;"></div>
     <div class="taskbar">
       <div class="main-section">
-        <input id="start-menu-active" type="checkbox" checked>
+        <input id="start-menu-active" type="checkbox" unchecked>
         <label class="start-button" for="start-menu-active">
         </label>
+          <div class="background" style="width: 100%; height: 100%;"></div>
         <div class="start-menu">
           <div class="start-menu-header">
             <div class="account-image-wrapper">
@@ -493,6 +566,10 @@ jQuery('.screen').css('opacity', '100');
                 <div class="icon" style="background-image:url('XP/Icon/0409/14.ico')"></div>
                 <div class="label">About Windows</div>
               </div>
+              <div onclick="webamp.reopen();" class="start-menu-item favorite-item">
+                <div class="icon" style="background-image:url('https://appimage.github.io/database/Webamp/icons/512x512/webamp-desktop.png')"></div>
+                <div class="label">Webamp</div>
+              </div>
               <div class="all-programs">
                 <div class="divider"></div>
               </div>
@@ -518,39 +595,38 @@ jQuery('.screen').css('opacity', '100');
                 <div class="icon" style="background-image:url('XP/Icon/0409/123.ico')"></div>
                 <div class="label">File System</div>
               </div>
-              <div class="start-menu-item my-item">
-                <div class="icon" style="background-image:url('https://dl.dropboxusercontent.com/u/19745853/Win%20XP%20icons/18.ico')"></div>
-                <div class="label">My Network Places</div>
-              </div>
               
               <div class="divider"></div>
               
-              <div class="start-menu-item">
-                <div class="icon" style="background-image:url('https://dl.dropboxusercontent.com/u/19745853/Win%20XP%20icons/22.ico')"></div>
+              <div onclick="ctrl()" class="start-menu-item">
+                <div class="icon" style="background-image: url('img/XP/22.ico')"></div>
                 <div class="label">Control Panel</div>
               </div>
               <div class="start-menu-item">
-                <div class="icon" style="background-image:url('https://dl.dropboxusercontent.com/u/19745853/Win%20XP%20icons/138.ico')"></div>
+                <div class="icon" style="background-image:url('img/XP/138.ico')"></div>
                 <div class="label">Printers and Faxes</div>
               </div>
               
               <div class="divider"></div>
               
               <div class="start-menu-item">
-                <div class="icon" style="background-image:url('https://dl.dropboxusercontent.com/u/19745853/Win%20XP%20icons/24.ico')"></div>
+                <div class="icon" style="background-image:url('img/XP/24.ico')"></div>
                 <div class="label">Help and Support</div>
               </div>
               <div class="start-menu-item">
-                <div class="icon" style="background-image:url('https://dl.dropboxusercontent.com/u/19745853/Win%20XP%20icons/23.ico')"></div>
+                <div class="icon" style="background-image:url('img/XP/23.ico')"></div>
                 <div class="label">Search</div>
               </div>
               <div class="start-menu-item">
-                <div class="icon" style="background-image:url('https://dl.dropboxusercontent.com/u/19745853/Win%20XP%20icons/25.ico')"></div>
+                <div class="icon" style="background-image:url('img/XP/25.ico')"></div>
                 <div class="label">Run...</div>
               </div>
             </div>
           </div>
           <div class="start-menu-footer">
+              <div onclick="bsod()" class="crash">
+              <img style="position: absolute; right: 8px; bottom: 6px;" src="XP/Icon/0409/242.ico">
+              </div>
           </div>
         </div>
       </div>
@@ -574,4 +650,40 @@ jQuery('.screen').css('opacity', '100');
       }
       setInterval('getDayTime()', 100);
 </script>
+</div>
+<script>
+    function bsod() {
+        $('#everythingtoman').load('Apps/BSOD.html');
+        $( ".winbox" ).remove();
+        
+    }
+    
+function tripleballs() {
+    document.body.style.backgroundImage = "url('img/Vortec Space.jpg')";
+    document.cookie = 'wallpaper=vortec; expires=31 Dec 4096 11:59:00 UTC;path=/;SameSite=Lax';
+};
 
+function doubleballs() {
+    document.body.style.backgroundImage = "url('img/Bliss.jpg')";
+    document.cookie = 'wallpaper=bliss; expires=31 Dec 4096 11:59:00 UTC;path=/;SameSite=Lax';
+};   
+    
+function quadballs() {
+    document.body.style.backgroundImage = "url('img/Red Moon Desert.jpg')";
+    document.cookie = 'wallpaper=buttocks; expires=31 Dec 4096 11:59:00 UTC;path=/;SameSite=Lax';
+};     
+    
+
+  
+function crashf() {
+    $a = document.cookie;
+    $b = "theme=XP";  
+    if($a == $b) {
+        $('#stuff').load('Apps/XPTheme.html');
+    }
+    else {
+        $('#stuff').load('Apps/98Theme.html');
+    };
+};
+    
+</script>
