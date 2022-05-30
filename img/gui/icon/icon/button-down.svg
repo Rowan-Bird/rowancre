@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="16"
+   height="17"
+   viewBox="0 0 16 17"
+   fill="none"
+   version="1.1"
+   id="svg54"
+   sodipodi:docname="button-down.svg"
+   inkscape:version="1.2 (dc2aedaf03, 2022-05-15)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs58" />
+  <sodipodi:namedview
+     id="namedview56"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     inkscape:zoom="13.882353"
+     inkscape:cx="7.9957627"
+     inkscape:cy="8.5360169"
+     inkscape:window-width="1920"
+     inkscape:window-height="1060"
+     inkscape:window-x="1912"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg54" />
+  <path
+     fill-rule="evenodd"
+     clip-rule="evenodd"
+     d="M15 0H0V1V16H1V1H15V0Z"
+     fill="#DFDFDF"
+     id="path42" />
+  <path
+     fill-rule="evenodd"
+     clip-rule="evenodd"
+     d="M2 1H1V15H2V2H14V1H2Z"
+     fill="white"
+     id="path44" />
+  <path
+     fill-rule="evenodd"
+     clip-rule="evenodd"
+     d="M16 17H15H0V16H15V0H16V17Z"
+     fill="black"
+     id="path46" />
+  <path
+     fill-rule="evenodd"
+     clip-rule="evenodd"
+     d="M15 1H14V15H1V16H14H15V1Z"
+     fill="#808080"
+     id="path48" />
+  <rect
+     x="2"
+     y="2"
+     width="12"
+     height="13"
+     fill="#C0C0C0"
+     id="rect50"
+     style="fill:#c0c0c0;fill-opacity:1" />
+</svg>
