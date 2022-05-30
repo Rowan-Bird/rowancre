@@ -515,7 +515,7 @@ window.onload = function() {
 
 <head>
 <div class="buildstring">
-<span style="font-family: Tahoma,Verdana,Segoe,sans-serif;  color: white; position: fixed; bottom: 35px; right: 0px;  text-align: right;">Windows XP 2004 Edition Professional (Plus!)<br>For evaluation purposes only. Build 3015.rw.000020-1010</span>
+<span style="font-family: Tahoma,Verdana,Segoe,sans-serif;  color: white; position: fixed; bottom: 35px; right: 0px;  text-align: right;">Windows XP 2004 Edition Professional (Plus!)<br>For evaluation purposes only. Build 3016.rw.000020-1010</span>
     
 
 
@@ -678,11 +678,16 @@ function quadballs() {
 function crashf() {
     $a = document.cookie;
     $b = "theme=XP";  
+    $c = "theme=98";  
     if($a == $b) {
         $('#stuff').load('Apps/XPTheme.html');
     }
-    else {
+    else if($a == $c) {
         $('#stuff').load('Apps/98Theme.html');
+    }
+    else {
+        document.cookie = 'theme=XP; expires=31 Dec 4096 11:59:00 UTC;path=/;SameSite=Lax';
+        crashf();
     };
 };
     
