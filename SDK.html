@@ -6,33 +6,7 @@
   import Cookies from 'js.cookie.min.mjs'
 </script>
     
-    <script>
-if(navigator.userAgent.indexOf('MSIE')!==-1
-|| navigator.appVersion.indexOf('Trident/') > -1){
-            crashfdfdf();
-            crashfdfdf();
-            crashfdfdf();
-            crashfdfdf();
-            crashfdfdf();
-            crashfdfdf();
-            crashfdfdf();
-            crashfdfdf();
-            crashfdfdf();
-            crashfdfdf();
-            crashfdfdf();
-            crashfdfdf();
-            crashfdfdf();
-            crashfdfdf();
-            crashfdfdf();
-            crashfdfdf();
-            crashfdfdf();
-            crashfdfdf();
-            crashfdfdf();
-            crashfdfdf();
-            crashfdfdf();
-}        
 
-    </script>
     
 <div id="stuff">
   <link rel='stylesheet' href='https://unpkg.com/xp.css'><link rel='stylesheet' href='SDK.css'>  
@@ -176,7 +150,6 @@ var element = document.getElementById("welcome");
 var audio = new Audio('Media/Windows XP Startup.wav');
 audio.play();
 $("#welcome").fadeOut( 300 ).delay( 800 ).fadeOut( 400 );
-msieversion();
 jQuery('.screen').css('opacity', '100');
 crashf();    
 };
@@ -522,6 +495,12 @@ window.onload = function() {
     });
 </script>
  </div>   
+      <div id="error2">
+      <img src="img/explorer_110.ico" style="margin: 10px;" width="32px">
+      <p style="display: inline-block; top: 15px; position: absolute;">Please use Firefox or Chrome, features will be reduced</p>
+      <center>
+      </center>
+ </div>
 </div>
 
 <script src="csi.js/csi.min.js"></script>
@@ -667,7 +646,55 @@ window.onload = function() {
 </div>
 
 
+<style>
+    .98 {
+            margin: 0px;
+    font-family: "Trebuchet MS";
+    background: linear-gradient(90deg,#0a246a 0%,#a3c6ed 100%);
+    background-repeat: no-repeat;
+    background-size: auto 35px;
+    padding:2px 5px 2px 2px;
+    font-size:13px;
+    
+    height: 20px;
+    font-size: 11px;
+	 padding: 2px;
+    box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #dfdfdf;
+box-shadow: inset -2px -2px #808080, inset 2px 2px #fff;
+    border-width: 2px;
+    padding: 0 0 2px 0;
+    height: 12px;
+}
 
+        .wb-body.98 {
+            background-color: rgb(212, 208, 200);
+            color: black;
+    text-shadow: 0x 0px #0f1089;
+            margin: 2px;
+        }
+        
+.wb-close.98 {
+    background-image:  url(img/gui/icon/icon/close.svg), url(img/gui/icon/icon/button-down.svg);
+    background-size: 12px, 24px; 
+    background-position: center;
+    margin-right: 3px;
+    margin-left: -3px;
+    margin-top: 1px;
+}
+.wb-max.98 {
+    background-image: url(img/gui/icon/icon/maximize.svg), url(img/gui/icon/icon/button-down.svg);
+    background-size: 12px, 24px; 
+    background-position: center;
+    margin-left: -3px;
+}
+.wb-min.98 {
+    background-image: url(img/gui/icon/icon/minimize.svg), url(img/gui/icon/icon/button-down.svg);
+    background-size: 12px, 24px; 
+    background-position: center;
+    margin-left: -3px;
+}
+    
+</style>
 
 
 <script>
@@ -723,4 +750,34 @@ function crashf() {
 
 </script>
 <script>
+</script>
+<script type="text/javascript">
+   $(document).ready(function() {
+      if (navigator.userAgent.match(/trident/i) ){
+          iedetect();
+      }
+   });
+    function iedetect() {
+        $('.start-button').css("backgroundImage","url('NoEIBgdfgdggddutons/iebad.gif)");
+var node = document.getElementById("error2");
+var audio = new Audio('Media/chord.wav');
+audio.play();
+new WinBox({
+    title: "IE Error",
+    x: "center",
+    mount: node.cloneNode(true),
+    y: "center",
+    width: "384",
+    height: "128",
+        class: [
+        "98",
+        "no-close",
+        "no-resize",
+        "no-move",
+        "no-max",
+        "no-min"
+    ]
+});
+    }
+    
 </script>
