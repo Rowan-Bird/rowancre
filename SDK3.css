@@ -188,7 +188,7 @@ html, body {margin: 0; height: 100%; overflow: hidden}
         
         @import url('https://fonts.googleapis.com/css?family=Roboto:100,300,700');
 body{ 
-  font-family: 'Roboto', sans-serif; 
+  font-family: 'Segoe WP';
   color: #fff;
 }
 
@@ -200,12 +200,15 @@ body{
     transform: translate(150px);
   }
 }
-        
+
+@font-face {
+  font-family: 'Segoe WP';
+  src: url("fonts/converted/SegoeWP.woff2") format("woff2");
+}
         
 .winbox {
             margin: 0px;
-    font-family: "Trebuchet MS";
-    background: linear-gradient(90deg,#0a246a 0%,#a3c6ed 100%);
+    background: #0078d7;
     background-repeat: no-repeat;
     background-size: auto 35px;
     padding:2px 5px 2px 2px;
@@ -214,45 +217,48 @@ body{
     height: 20px;
     font-size: 11px;
 	 padding: 2px;
-    box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #dfdfdf;
-box-shadow: inset -2px -2px #808080, inset 2px 2px #fff;
+    box-shadow: inset -1px -1px #0078d7;
+box-shadow: inset -2px -2px #0078d7, inset 2px 2px #0078d7;
     border-width: 2px;
     padding: 0 0 2px 0;
     height: 12px;
 }
 
         .wb-body {
-            background-color: rgb(212, 208, 200);
+            background-color: #ffffff;
             color: black;
     text-shadow: 0x 0px #0f1089;
             margin: 2px;
         }
         
 .wb-close {
-    background-image:  url(img/gui/icon/icon/close.svg), url(img/gui/icon/icon/button-down.svg);
-    background-size: 12px, 24px; 
+    background-image:  url(CSS/close.png);
+    background-size: 24px; 
     background-position: center;
     margin-right: 3px;
     margin-left: -3px;
     margin-top: 1px;
+    filter: invert();
 }
 .wb-max {
-    background-image: url(img/gui/icon/icon/maximize.svg), url(img/gui/icon/icon/button-down.svg);
-    background-size: 12px, 24px; 
+    background-image:  url(CSS/max.png);
+    background-size: 24px; 
     background-position: center;
     margin-left: -3px;
+    filter: invert();
 }
 .wb-min{
-    background-image: url(img/gui/icon/icon/minimize.svg), url(img/gui/icon/icon/button-down.svg);
-    background-size: 12px, 24px; 
+    background-image:  url(CSS/min.png);
+    background-size: 24px; 
     background-position: center;
     margin-left: -3px;
+    filter: invert();
 }
 
         .wb-title {
-            text-shadow: 1px 1px #0f1089;
             font-size: 14px;
             font-weight: 500;
+            
         }    
 
 .winbox:not(.focus) {
