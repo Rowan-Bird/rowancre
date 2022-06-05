@@ -3,7 +3,7 @@ function iexplore() {
                 title: "Internet Explorer",
                 width: "800",
                 height: "550",
-                url: "/Apps/img/ie.html",
+                url: "img/ie.html",
                 id: "icedog",
                     class: [
                         "background"
