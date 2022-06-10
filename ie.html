@@ -1,0 +1,21 @@
+<link
+  rel="stylesheet"
+  href="https://unpkg.com/xp.css"
+>
+
+<span>Address</span>
+<input style="width: calc(100% - 130px)" type="text" placeholder="Enter URL">
+<button>Go</button>
+<iframe style="width: calc(100% - 3px); height: calc(100% - 29px);"></iframe>
+
+
+<script>
+let input = document.querySelector("input");
+let btn = document.querySelector("button");
+let iframe = document.querySelector("iframe");
+
+btn.onclick = function () {
+  iframe.src = input.value;
+};
+
+</script>
