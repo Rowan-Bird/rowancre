@@ -7,7 +7,6 @@ function cmd() {
                 id: "icedog",
                     class: [
                         "background",
-                        "cmd",
                             ]
             });
             }
