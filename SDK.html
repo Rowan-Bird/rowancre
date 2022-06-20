@@ -63,7 +63,9 @@
             position: absolute;
         }
         
-
+        .everythingtoman {
+            cursor: url(mouse.png), auto;
+        }
         
         .screen {
             opacity: 0;
@@ -570,7 +572,7 @@ window.onload = function() {
       <p style="display: inline-block; top: 15px; position: absolute;">This is a beta build! Some things are subject to change</p>
               <iframe src="change.txt" style="height: 256px; width: 384px; top: 50px;">This changelog is too dank</iframe>
               <p style="margin-right: auto; margin-left: 60px; bottom: 10px; position: absolute;">Click "X" to continue on your way to Windows 2004!</p>
- </div>
+ </div> 
 </div>
 
 <script src="csi.js/csi.min.js"></script>
@@ -614,6 +616,9 @@ window.onload = function() {
         <input id="start-menu-active" type="checkbox" unchecked>
         <label class="start-button" for="start-menu-active">
         </label>
+          
+        <img src="img/XP/24.ico" onclick="report()" style="margin-left: -15px; position: absolute; top: 7;" width="16">
+          
           <div class="background" style="width: 100%; height: 100%;"></div>
         <div class="start-menu">
           <div class="start-menu-header">
@@ -897,5 +902,40 @@ style.textContent = `
 `;
 
 document.head.appendChild(style);
-}
+};
+    
+    
+function report() {
+var node = document.getElementById("report");
+var audio = new Audio('Media/ding.wav');
+audio.play();
+new WinBox({
+    title: "Notice",
+    x: "center",
+    mount: node.cloneNode(true),
+    y: "center",
+    width: "423",
+    height: "290",
+        class: [
+        "no-resize",
+        "no-max",
+        "no-min",
+        "background"
+    ]
+    });
+};
 </script>
+
+<div class="hide">
+    <div id="report">
+        <center>
+            
+        <img src="img/banner.png" style="display: block">
+          <img src="img/Bitmap138.bmp" style="display: block">
+            <p style="font-size: 13px;">To report, please include the following: <br>1.  Windows 2004 build <br>2. Bug description  <br>3. Steps to recreate the bug<br>4. Browser name and version<br>5. Make sure to tag it as a bug report</p>
+            <p>Send bug reports to RBWindows2004@gmail.com or in the discord server under #bug-reports</p>
+        </center>
+        <script>
+        </script>
+ </div>
+</div>
