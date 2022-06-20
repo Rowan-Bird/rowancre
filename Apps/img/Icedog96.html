@@ -12,13 +12,13 @@
 <div style="background-color: grey; height: 2px; width: 98%; margin: 2px;"></div>
 <span>Address</span>
 <input style="width: calc(100% - 130px)" type="text" placeholder="Enter URL">
-<button>Go</button>
+<button id="button">Go</button>
 <iframe name="WBrowse" src="https://rowan-bird.github.io/rowancre/" style="width: calc(100% - 3px); height: calc(100% - 56px);"></iframe>
 
 
 <script>
 let input = document.querySelector("input");
-let btn = document.querySelector("button");
+let btn = document.getElementById("button");
 let iframe = document.querySelector("iframe");
 
 btn.onclick = function () {
