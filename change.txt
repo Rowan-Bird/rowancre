@@ -1,0 +1,40 @@
+Changelog:
+Build 3017-1;
+--Got rid of control panel, I think it needs improvment--
+--Added cool stuff--
+--Added development options--
+--Overhauled IE--
+--Added a Command Prompt--
+
+Build 3017;
+--Beta build warning--
+--This changelog--
+--New build number--
+--Working IE!--
+
+Build 3015;
+--Cookie Based Theming support--
+--BSOD--
+
+Build 3010-final;
+--Crude but functional support for storing text files from one's computer--
+--Fixed bugs--
+--Starting work on the start menu again--
+
+Build 3010-rc2;
+--Working clock--
+--Fixed winver--
+
+Build 3010-rc0;
+--Inactive styling--
+--More start icons--
+--Better start behavior--
+
+Build 3005-ish;
+--Fixed XP Theme--
+
+Build 3000-ish;
+--Started rewriting the UI--
+
+Pre-Build 3000-ish;
+--Poorly built UI--

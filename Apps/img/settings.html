@@ -1,23 +1,5 @@
-<div style="overflow:hidden;" id="settings">
-    <section style="margin: 5px;" class="tabs" style="max-width: 500px">
-  <menu role="tablist" aria-label="Sample Tabs">
-    <button style="" role="tab" aria-selected="true" aria-controls="tab-A">Themes</button>
-  </menu>
-  <!-- the tab content -->
-  <article style=" height: 340;" role="tabpanel" id="tab-A">
-    <p>
-      A theme is a background plus a set of sounds, icons, and other elements to help you personalize your computer with one click.
-    </p>
-<select>
-  <option onclick="$('#stuff').load('Apps/XPTheme.html'); document.cookie = 'theme=XP; expires=31 Dec 4096 11:59:00 UTC;path=/;SameSite=Lax';">Windows XP Theme</option>
-  <option onclick="$('#stuff').load('Apps/98Theme.html'); document.cookie = 'theme=98; expires=31 Dec 4096 11:59:00 UTC;path=/;SameSite=Lax';">Windows Classic Theme</option>
-</select>
-<select>
-  <option onclick="doubleballs()">Bliss</option>
-  <option onclick="quadballs()">Red Moon Desert</option>
-  <option onclick="tripleballs()">Vortec Space</option>
-</select>
-      <div id="crappy" style="background-image: url(img/XP.png); width: 348px; height: 220px; margin-top: 15px;"></div>
-  </article> 
-</section>
-    <button onclick="bsod()" style="position: absolute; right: 10px;">OK</button>
+<div id="settings">
+    <div style="margin: 12px;">
+        <button onclick="balls()">Enable Animations</button>
+    </div>
+</div>

@@ -3,10 +3,17 @@
   href="https://unpkg.com/xp.css"
 >
 
+<a href="https://rowan-bird.github.io/rowancre/" target="WBrowse"><button>Home</button></a>
+
+<a href="https://www.google.com/webhp?igu=1" target="WBrowse"><button>Google Search</button></a>
+
+<a href="https://rowan-bird.github.io/rowancre/SDK.html" target="WBrowse"><button>Winception</button></a>
+
+<div style="background-color: grey; height: 2px; width: 98%; margin: 2px;"></div>
 <span>Address</span>
 <input style="width: calc(100% - 130px)" type="text" placeholder="Enter URL">
 <button>Go</button>
-<iframe style="width: calc(100% - 3px); height: calc(100% - 29px);"></iframe>
+<iframe name="WBrowse" src="https://rowan-bird.github.io/rowancre/" style="width: calc(100% - 3px); height: calc(100% - 56px);"></iframe>
 
 
 <script>
@@ -15,7 +22,7 @@ let btn = document.querySelector("button");
 let iframe = document.querySelector("iframe");
 
 btn.onclick = function () {
-  iframe.src = input.value;
+    iframe.src = input.value;
 };
 
 </script>

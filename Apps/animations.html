@@ -1,0 +1,17 @@
+<style>
+    .winbox {
+        animation: aero .3s;
+    }
+    
+        @keyframes aero {
+            from {
+                transform: perspective(2000px) rotateX(-25deg) scale(92%);
+                opacity: 0;
+            }
+
+            to {
+                transform: rotateY(0deg) scale(100%);
+                opacity: 1;
+            }
+        }
+</style>

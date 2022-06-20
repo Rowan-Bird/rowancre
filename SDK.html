@@ -1,5 +1,3 @@
-
-
 <div id="everythingtoman">
 <script type="module" src="js.cookie.mjs"></script>
 <script type="module">
@@ -9,8 +7,9 @@
 
     
 <div id="stuff">
-  <link rel='stylesheet' href='https://unpkg.com/xp.css'><link rel='stylesheet' href='SDK.css'>  
     </div>    
+    
+  <link rel='stylesheet' href='https://unpkg.com/xp.css'><link rel='stylesheet' href='SDK.css'>  
     
     <div id="contextMenu" class="context-menu" style="display: none">
         <ul role="menu" class="can-hover" style="width: 200px">
@@ -86,8 +85,7 @@
   width: 2px;
 background: linear-gradient(0deg, rgba(0,0,0,0) 0%, rgba(220,220,220,1) 50%, rgba(0,0,0,0) 100%); 
 }
-        
-    
+
     .logonwindow {
         background: linear-gradient(90deg, rgba(26, 47, 153, 100) 0%, rgba(200, 200, 200, 0) 100%);
         width: 320px;
@@ -151,7 +149,8 @@ var audio = new Audio('Media/Windows XP Startup.wav');
 audio.play();
 $("#welcome").fadeOut( 300 ).delay( 800 ).fadeOut( 400 );
 jQuery('.screen').css('opacity', '100');
-crashf();    
+crashf();
+    betamessage();
 };
     </script>
     <script>    
@@ -167,11 +166,75 @@ window.onload = function() {
 <!-- import contents of apps -->
 <div data-include="Apps/img/webpack/index.html"></div>
 <div class="hide">
-<div data-include="Apps/version.html"></div>
+<div>
+    <div class="window-body" id="aboutwin" style="margin: 0px;">
+      <center>
+        <img src="img/banner.png" style="display: block">
+          <img src="img/Bitmap138.bmp" style="display: block">
+      </center>
+          <p style="margin-left: 50px; margin-right: 50px;">Microshaft ® Windows <br> Version 5.1 (Build 3017.rw.000021-1020 : Version 2004) <br> Copyright ® 2000-2003 RowanCrE  <br><br><br> This product is licensed under the terms of the <a href="hidden/EULA.html">End-user License Agreement</a> to: <br><br> Rowan <br> RowanCrE</p>
+          <div style="margin-left: 50px; margin-right: 15px; background-color: darkgray; height: 1px; box-shadow: 1px 1px white;"></div>
+      <p style="margin-left: 50px; margin-right: 50px;">Physical memory available to Windows:  65,535</p>
+      <button class="focused" onclick="winbox.close(true);" style="position: absolute; right: 10px;">This button does nothing</button>
+  </div>
+</div>
 <div data-include="Apps/img/Icedog96.html"></div>
 <div data-include="Apps/img/dserror.html"></div>
-<div data-include="Apps/img/settings.html"></div>
+<div>
+    
+    <div style="margin: 12px;" id="settings">
+    <section class="tabs" style="max-width: 500px">
+  <menu role="tablist" aria-label="Sample Tabs">
+    <button role="tab" aria-selected="true" aria-controls="tab-A">Tab A</button>
+    <button role="tab" aria-controls="tab-B">Tab B</button>
+    <button role="tab" aria-controls="tab-C">Tab C</button>
+  </menu>
+  <!-- the tab content -->
+  <article role="tabpanel" id="tab-A">
+    <div style="margin: 12px;">
+        <button onclick="balls()">Enable Animations</button>
+        <button onclick="bsod()">Crash cumputer</button>
+    </div>
+
+  </article>
+  <article role="tabpanel" hidden id="tab-B">
+    <h3>More...</h3>
+    <p>This tab contains a GroupBox</p>
+    <fieldset>
+      <legend>Today's mood</legend>
+      <div class="field-row">
+        <input id="radio10" type="radio" name="fieldset-example2">
+        <label for="radio10">Claire Saffitz</label>
+      </div>
+      <div class="field-row">
+        <input id="radio11" type="radio" name="fieldset-example2">
+        <label for="radio11">Brad Leone</label>
+      </div>
+      <div class="field-row">
+        <input id="radio12" type="radio" name="fieldset-example2">
+        <label for="radio12">Chris Morocco</label>
+      </div>
+      <div class="field-row">
+        <input id="radio13" type="radio" name="fieldset-example2">
+        <label for="radio13">Carla Lalli Music</label>
+      </div>
+    </fieldset>
+  </article>
+  <article role="tabpanel" hidden id="tab-C">
+    <h3>Tab 3</h3>
+    <p>Lorem Ipsum Dolor Sit</p>
+  </article>
+</section>
+</div>    
+    
+    <div id="settings">
+    <div style="margin: 12px;">
+        <button onclick="balls()">Enable Animations</button>
+    </div>
+</div>
+</div>
 <div data-include="Apps/calc/index.html"></div>
+<div data-include="Apps/cmd.html"></div>    
 <div>
 <style>
     html, body {width: 100%; height: 100%; margin: 0px;}
@@ -500,6 +563,13 @@ window.onload = function() {
       <p style="display: inline-block; top: 15px; position: absolute;">Please use Firefox or Chrome, features will be reduced</p>
       <center>
       </center>
+        
+ </div>
+          <div id="error3">
+      <img src="img/XP/1001.ico" style="margin: 10px;" width="32px">
+      <p style="display: inline-block; top: 15px; position: absolute;">This is a beta build! Some things are subject to change</p>
+              <iframe src="change.txt" style="height: 256px; width: 384px; top: 50px;">This changelog is too dank</iframe>
+              <p style="margin-right: auto; margin-left: 60px; bottom: 10px; position: absolute;">Click "X" to continue on your way to Windows 2004!</p>
  </div>
 </div>
 
@@ -512,6 +582,7 @@ window.onload = function() {
 <script src="Apps/calc.app"></script>
 <script src="Apps/ctrlpanel.app"></script>
 <script src="Apps/FSBrowse.app"></script>
+<script src="Apps/cmd.app"></script>
 
 <!-- End of applib -->
 
@@ -525,7 +596,7 @@ window.onload = function() {
 
 <head>
 <div class="buildstring">
-<span style="font-family: Tahoma,Verdana,Segoe,sans-serif;  color: white; position: fixed; bottom: 35px; right: 0px;  text-align: right;">Windows XP 2004 Edition Professional (Plus!)<br>For evaluation purposes only. Build 3016.rw.000020-1010</span>
+<span style="font-family: Tahoma,Verdana,Segoe,sans-serif;  color: white; position: fixed; bottom: 35px; right: 0px;  text-align: right;">Windows XP 2004 Edition Professional (Plus!)<br>For evaluation purposes only. Build 3017.rw.000021-1020</span>
     
 
 
@@ -612,9 +683,9 @@ window.onload = function() {
                 <div class="icon" style="background-image: url('img/XP/22.ico')"></div>
                 <div class="label">Control Panel</div>
               </div>
-              <div class="start-menu-item">
-                <div class="icon" style="background-image:url('img/XP/138.ico')"></div>
-                <div class="label">Printers and Faxes</div>
+              <div onclick="cmd()" class="start-menu-item">
+                <div class="icon" style="background-image:url('img/console.png')"></div>
+                <div class="label">Command Prompt</div>
               </div>
               
               <div class="divider"></div>
@@ -694,6 +765,8 @@ box-shadow: inset -2px -2px #808080, inset 2px 2px #fff;
     margin-left: -3px;
 }
     
+
+    
 </style>
 
 
@@ -711,7 +784,7 @@ box-shadow: inset -2px -2px #808080, inset 2px 2px #fff;
 </div>
 <script>
     function bsod() {
-        $('#everythingtoman').load('Apps/BSOD.html');
+        $('#everythingtoman').load('/Apps/BSOD.html');
         $( ".winbox" ).remove();
         
     }
@@ -747,7 +820,6 @@ function crashf() {
     };
 };
 
-
 </script>
 <script>
 </script>
@@ -778,6 +850,52 @@ new WinBox({
         "no-min"
     ]
 });
+    };
+    
+    function betamessage() {
+var node = document.getElementById("error3");
+var audio = new Audio('Media/ding.wav');
+audio.play();
+new WinBox({
+    title: "Notice",
+    x: "center",
+    mount: node.cloneNode(true),
+    y: "center",
+    width: "512",
+    height: "384",
+        class: [
+        "no-resize",
+        "no-max",
+        "no-min",
+        "background"
+    ]
+});
     }
     
+</script>
+<script>
+    function balls() {
+const style = document.createElement('style');
+
+style.textContent = `
+            .winbox {
+        animation: aero .3s;
+    }
+    
+        @keyframes aero {
+            from {
+                transform: perspective(2000px) rotateX(-25deg) scale(92%);
+                opacity: 0;
+            }
+
+            to {
+                transform: rotateY(0deg) scale(100%);
+                opacity: 1;
+            }
+        }
+    
+`;
+
+document.head.appendChild(style);
+}
 </script>

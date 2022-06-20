@@ -1,36 +1,23 @@
 function crashfdfdf() {
-var audio = new Audio('Media/Windows XP Error.wav');
+var node = document.getElementById("error2");
+var audio = new Audio('Media/chord.wav');
 audio.play();
-function error(x,y) {
 new WinBox({
-    title: "USE FIREFOX! YOU ARE AT RISK",
-    x: x,
-    y: y,
+    title: "IE Error",
+    x: "center",
+    mount: node.cloneNode(true),
+    y: "center",
     width: "384",
-    height: "128"
+    height: "128",
+        class: [
+        "98",
+        "no-close",
+        "no-resize",
+        "no-move",
+        "no-max",
+        "no-min"
+    ]
 });
 };
-var audio = new Audio('Media/Windows XP Error.wav');
-error(50,50);
-audio.play;
-setTimeout(function() {
-error(60,60);
-}, 268);
-audio.play;
-setTimeout(function() {
-var audio = new Audio('Media/Windows XP Error.wav');
-error(70,70);
-}, 536);
-audio.play;
-setTimeout(function() {
-var audio = new Audio('Media/Windows XP Error.wav');
-error(80,80);
-}, 736);
-audio.play;
-setTimeout(function() {
-var audio = new Audio('Media/Windows XP Error.wav');
-error(90,90);
-}, 936);
-audio.play;
-};
 
+  

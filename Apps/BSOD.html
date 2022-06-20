@@ -15,5 +15,22 @@
         font-size: 14px;
         overflow: hidden;
 }
+    
+@keyframes wipe-in-down {
+  from {
+    clip-path: inset(0 0 100% 0);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+[transition-style="in:wipe:down"] {
+  animation: 2.5s cubic-bezier(.25, 1, .30, 1) wipe-in-down both;
+}
+    
+    .BSOD {
+        animation: wipe-in-down 0.5s linear; 
+    }
 </style>
-<p>A problem has been detected and Windows has been shut down to prevent damage<br> to your computer.<br><br>If this is the first time you've seen this Stop error screen, <br>Restart your computer. If this screen appears again, follow<br>follow these steps<br><br>Check to be sure you have adequate disk space. If a driver is<br>indentified in the Stop message, disable the driver or check<br>with the manufacturer for driver updates. Try changing video<br>adapters<br><br>Technical information:<br><br>*** STOP: 0x00000000 (0x00000000,0x00000000,0x00000000,0x00000000)<br><br><br>*** DUMP.sys - Address F88ff100 base  at 00BA00SED00, datestamp 3b9f3248<br><br>Beginning dump of physical memory</p>
+<p class="BSOD">A problem has been detected and Windows has been shut down to prevent damage<br> to your computer.<br><br>If this is the first time you've seen this Stop error screen, <br>Restart your computer. If this screen appears again, follow<br>follow these steps<br><br>Check to be sure you have adequate disk space. If a driver is<br>indentified in the Stop message, disable the driver or check<br>with the manufacturer for driver updates. Try changing video<br>adapters<br><br>Technical information:<br><br>*** STOP: 0x00000000 (0x00000000,0x00000000,0x00000000,0x00000000)<br><br><br>*** DUMP.sys - Address F88ff100 base  at 00BA00SED00, datestamp 3b9f3248<br><br>Beginning dump of physical memory</p>
