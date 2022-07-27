@@ -3,7 +3,7 @@ Build 3017-1;
 --Got rid of control panel, I think it needs improvment--
 --Added cool stuff--
 --Added development options--
---Overhauled IE--
+--Overhauled IE-- (I literally added 3 buttons)
 --Added a Command Prompt--
 
 Build 3017;
