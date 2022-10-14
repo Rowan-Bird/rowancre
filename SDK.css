@@ -257,6 +257,10 @@ body{
     margin-left: -3px;
 }
 
+.winbox(.max) {
+	margin-bottom; 31px;
+}
+
 .winbox:not(.focus) .wb-max {
     background-image: url(img/gui/icon/maximize-nofocus.svg);
     background-position: center;
